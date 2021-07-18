@@ -5,6 +5,7 @@ import Classes from '../views/Classes.vue'
 import Download from '../views/Download.vue'
 import Join from '../views/Join.vue'
 import SignIn from '../views/SignIn.vue'
+import SignUp from '../views/SignUp.vue'
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,11 @@ const routes = [
     path: '/signin',
     name: 'SignIn',
     component: SignIn
+  },
+  {
+    path: '/signup',
+    name: 'SignUp',
+    component: SignUp
   },
 ]
 

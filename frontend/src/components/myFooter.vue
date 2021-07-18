@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-footer dark padless absolute color="#F8527D" id="foot">
+  <v-footer dark padless absolute color="#F2F2F2" id="foot">
       <v-container>
             <v-row class="mb-6" no-gutters>
                   <v-col v-for="item in titles" :key="n">
