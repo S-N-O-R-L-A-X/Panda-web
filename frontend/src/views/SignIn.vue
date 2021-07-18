@@ -18,12 +18,15 @@
               <v-text-field v-model="password" :rules="nameRules" :counter="10" 
               label="Password" required outlined></v-text-field>
           </v-row>
-          <v-row>Remember me</v-row>
-          
-          <v-row><v-btn>Sign In →</v-btn></v-row>
+          <v-row><v-checkbox v-model="checkbox" :label="`Remember me`"></v-checkbox></v-row>
+          <!-- <v-row><v-btn id="signin">Sign In →</v-btn></v-row> -->
+          <v-card-title></v-card-title>
       </v-form>
-      <v-divider></v-divider>
-      <v-row>Not a member? <router-link to="/signup">Create an account</router-link></v-row>
+      
+      <v-btn id="signin">Sign In →</v-btn>
+      <v-row id="hint">Not a member? <router-link to="/signup">Create an account</router-link></v-row>
+
+
   </v-card>
 </div>
 </template>
@@ -42,6 +45,8 @@ export default {
         v => !!v || 'E-mail is required',
         v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
+      checkbox: true,
+     
     }),
 }
 </script>
@@ -98,4 +103,33 @@ export default {
   top:300px;
 }
 
+#signin
+{
+  position: absolute;
+  background-color:#1443BD;
+  top:520px;
+}
+
+#hint
+{
+  position: absolute;
+  width: 247px;
+  height: 20px;
+  left: calc(50% - 247px/2 + 0.5px);
+  bottom: 48px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  /* identical to box height, or 20px */
+
+  text-align: center;
+
+  /* Black 60 */
+
+  color: rgba(17, 17, 19, 0.6);
+
+}
 </style>
