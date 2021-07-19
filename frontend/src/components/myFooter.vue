@@ -1,29 +1,29 @@
 <template>
 <div>
   <v-footer dark padless absolute color="#F2F2F2" id="foot">
-      <v-container>
+      <v-container color="#F2F2F2">
             <v-row class="mb-6" no-gutters>
-                  <v-col v-for="item in titles" :key="n">
+                  <v-col v-for="(item,index) in titles" :key="index" id="title">
                   <v-card tile>{{item}}</v-card>
                   </v-col>
             </v-row>
 
             <v-row no-gutters>
-                  <v-col v-for="item in row1" :key="n">
+                  <v-col v-for="(item,index) in row1" :key="index" id="content">
                   <!-- <v-card class="pa-2" tile outlined> -->
                   {{item}}
                   <!-- </v-card> -->
                   </v-col>
             </v-row>
             <v-row no-gutters>
-                  <v-col v-for="item in row2" :key="n">
+                  <v-col v-for="(item,index) in row2" :key="index" id="content">
                   <!-- <v-card class="pa-2" tile outlined> -->
                   {{item}}
                   <!-- </v-card> -->
                   </v-col>
             </v-row>
             <v-row no-gutters>
-                  <v-col v-for="item in row3" :key="n" :cols="3">
+                  <v-col v-for="(item,index) in row3" :key="index" :cols="3" id="content">
                   <!-- <v-card class="pa-2" tile outlined> -->
                   {{item}}
                   <!-- </v-card> -->
@@ -31,7 +31,7 @@
                   <v-col><v-btn>sign up</v-btn></v-col>
             </v-row>
             <v-row no-gutters>
-                  <v-col v-for="item in row4" :key="n">
+                  <v-col v-for="(item,index) in row4" :key="index" >
                   <!-- <v-card class="pa-2" tile outlined> -->
                   {{item}}
                   <!-- </v-card> -->
@@ -101,17 +101,15 @@ export default {
       font-style: normal;
       font-weight: bold;
       font-size: 4px;
-
       /* identical to box height, or 140% */
       /* Light/Gray/0 */
 
-      color: #FFFFFF;
+      color: #F56D7E;
 
 }
 
 #content 
 {
-      
       width: 68px;
       height: 24px;
     
@@ -123,12 +121,11 @@ export default {
       line-height: 24px;
       /* identical to box height, or 150% */
 
-      text-align: center;
       letter-spacing: 0.0125em;
 
       /* Light/Gray/0 */
 
-      color: #FFFFFF;
+      color: #F56D7E;
 
 
       /* Inside Auto Layout */

@@ -14,10 +14,8 @@
       <v-form id="form">
           <v-row><v-text-field append-icon="mdi-email" v-model="email" :rules="emailRules"
           label="E-mail" required outlined></v-text-field></v-row>
-          <v-row>
-              <v-text-field v-model="password" :rules="nameRules" :counter="10" 
-              label="Password" required outlined></v-text-field>
-          </v-row>
+          <v-row><v-text-field  append-icon="mdi-eye-outline" v-model="password" :rules="nameRules" :counter="10" 
+          label="Password" required outlined></v-text-field></v-row>
           <v-row><v-checkbox v-model="checkbox" :label="`Remember me`"></v-checkbox></v-row>
           <!-- <v-row><v-btn id="signin">Sign In →</v-btn></v-row> -->
           <v-card-title></v-card-title>
@@ -57,7 +55,7 @@ export default {
   width:522px;
   height:659px;
   position:absolute;
-  left:622px;
+  left:642px;
   top:52px;
 }
 

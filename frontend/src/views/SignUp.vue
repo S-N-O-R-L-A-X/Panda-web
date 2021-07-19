@@ -4,40 +4,32 @@
     <v-img src="../pics/sign in1.jpg" height="100%" width="100%"></v-img>
   </div>
   <!-- <v-img src="../pics/sign in1.jpg"></v-img> -->
-  <v-card elevation="5" id="card">
+  <v-card  id="card">
       <v-img src="../pics/LOGO.png" id="logo"></v-img>
-      <v-divider></v-divider>
-      <v-spacer></v-spacer>
-      welcome
-      <v-container>
-        <v-row><v-btn block id="wechat"><v-icon>mdi-wechat </v-icon>Sign in with WeChat</v-btn></v-row>
-        <v-row><v-btn block id="facebook"><v-icon>mdi-facebook</v-icon>Sign in with Facebook</v-btn></v-row>
-        <v-divider></v-divider>
-        <v-spacer></v-spacer>
-        <v-divider></v-divider> 
-        <br>
-        <v-form>
-            <v-row><v-text-field v-model="email" :rules="emailRules"
-            label="Emailaddress" required outlined></v-text-field></v-row>
-            <v-row>
-                <v-text-field v-model="password" :rules="nameRules" :counter="10" 
-                label="Password" required outlined></v-text-field>
-            </v-row>
-            <v-row>
-                <v-text-field v-model="username" :rules="nameRules" :counter="10" 
-                label="Username" required outlined></v-text-field>
-            </v-row>
-            <v-row>
-                <v-text-field v-model="lastname" :rules="nameRules" :counter="10" 
-                label="Password" required outlined></v-text-field>
-            </v-row>
-            
-            <v-row><v-btn>Join us →</v-btn></v-row>
-        </v-form>
-        <v-divider></v-divider>
-        <v-row>Not a member? <router-link to="/signup">Create an account</router-link></v-row>
-      </v-container>
+      <v-card-title id="v-card-title">welcome</v-card-title>
       
+      <v-form id="form">
+          <v-row><v-text-field v-model="email" :rules="emailRules"
+          label="Emailaddress" required outlined></v-text-field></v-row>
+          <v-row>
+              <v-text-field v-model="password" :rules="nameRules" :counter="10" 
+              label="Password" required outlined></v-text-field>
+          </v-row>
+          <v-row>
+              <v-text-field v-model="username" :rules="nameRules" :counter="10" 
+              label="Username" required outlined></v-text-field>
+          </v-row>
+          <v-row>
+            <v-select v-model="select" :items="identities" 
+            :rules="[v =>!!v||'Itendentity is required']" label="Identity" required></v-select>
+          </v-row>
+          <v-card-title></v-card-title>
+      </v-form>
+      
+      <v-btn id="signup">Join Us →</v-btn>
+      <v-row id="hint">Already a member? <router-link to="/signin">Sign in.</router-link></v-row>
+
+
   </v-card>
 </div>
 </template>
@@ -46,8 +38,8 @@
 export default {
     data: () => ({
       valid: false,
-      firstname: '',
       password: '',
+      username:'',
       nameRules: [
         v => !!v || 'Name is required',
         v => v.length <= 10 || 'Name must be less than 10 characters',
@@ -57,6 +49,9 @@ export default {
         v => !!v || 'E-mail is required',
         v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
+      checkbox: true,
+      select: null,
+      identities:["Teacher","Student"]
     }),
 }
 </script>
@@ -64,31 +59,90 @@ export default {
 <style scoped>
 #card
 {
-
+  width:839px;
+  height:100%;
   position:absolute;
-  left:601px;
+  right:0;
+  top:0;
+}
 
+#v-card-title
+{
+  /* width:74px; */
+  height:22px;
+  position:absolute;
+  top:186px;
+  left:383px; 
+
+  font-size:16px;
 }
 
 #logo
 {
     width: 151px;
     height:63px;
+    position: absolute;
+    left:344px;
+    top:101px;
 }
 
-.v-btn 
-{
-    color:#ffffff;
-}
 
 #wechat
 {
     background-color:#00AD22;
+    position: absolute;
     
+    top:130px;
 }
 
 #facebook
 {
-    background-color:#476AF0
+    background-color:#476AF0;
+    position: absolute;
+    
+    top:194px;
+}
+
+#form
+{
+  width:375px;
+  position: absolute;
+  left:232px;
+  top:281px;
+}
+
+#signup
+{
+  
+  width: 375px;
+  height:50px;
+  position: absolute;
+  background-color:#1443BD;
+  color:#ffffff;
+  top:620px;
+  left:232px;
+}
+
+#hint
+{
+  position: absolute;
+  width: 247px;
+  height: 20px;
+  left: 350px;
+  top: 750px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  /* identical to box height, or 20px */
+
+  text-align: center;
+
+  /* Black 60 */
+
+  color: rgba(17, 17, 19, 0.6);
+
 }
 </style>
