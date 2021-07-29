@@ -6,6 +6,7 @@ import Download from '../views/Download.vue'
 import Join from '../views/Join.vue'
 import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
+import Backup from '../components/backup.vue'
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,11 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
+  },
+  {
+    path: '/backup',
+    name: 'Backup',
+    component: Backup
   },
 ]
 

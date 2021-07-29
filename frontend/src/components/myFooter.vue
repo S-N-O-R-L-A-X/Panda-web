@@ -80,8 +80,8 @@ export default {
                   titles:["Product","Classes","Company","Subscribe to Panda"],
                   row1:["Website","HSK","About","Subscribe to Panda"],
                   row2:["Mobile APP","Live Class","Students","newsletter with updates"],
-                  row3:["","KTV","Teachers"],
-                  row4:["","",""]
+                  row3:["","KTV","Teachers",""],
+                  row4:["","","",""]
             }
       }
       

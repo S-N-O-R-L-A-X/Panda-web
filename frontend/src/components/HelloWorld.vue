@@ -7,7 +7,7 @@
   <p id="title">Learning Chinese with Panda!</p>
   <p id="illustration">Professional and interesting Chinese learning community.</p>
   <v-btn id="signIn" @click="toSignIn()">Sign In</v-btn>
-  <v-btn id="signUp">Sign Up</v-btn>
+  <v-btn id="signUp" @click="toSignUp()">Sign Up</v-btn>
   <v-img id="triangle" src="../pics/Point-line triangle cube.png"></v-img>
   <v-img id="banner" src="../pics/Banner.png"></v-img>
   <v-img id="vector3" src="../pics/Vector 3.png"></v-img>
@@ -32,6 +32,10 @@ export default {
     toSignIn()
     {
       this.$router.push('/signin');
+    },
+    toSignUp()
+    {
+      this.$router.push('/signup');
     }
   }
   

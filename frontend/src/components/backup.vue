@@ -1,34 +1,41 @@
 <template>
-  <v-footer
-    dark
-    padless
-  >
-    <v-card
-      class="flex"
-      flat
-      tile
-    >
-      <v-card-title class="teal">
-        <strong class="subheading">Get connected with us on social networks!</strong>
+<div>
+      <v-row class="mb-6" no-gutters>
+            <v-col v-for="(item,index) in titles" :key="index" id="title">
+            <v-card tile>{{item}}</v-card>
+            </v-col>
+      </v-row>
 
-        <v-spacer></v-spacer>
-
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4"
-          dark
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
-      </v-card-title>
-
-      <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text>
-    </v-card>
-  </v-footer>
+      <v-row no-gutters>
+            <v-col v-for="(item,index) in row1" :key="index" id="content">
+            <!-- <v-card class="pa-2" tile outlined> -->
+            {{item}}
+            <!-- </v-card> -->
+            </v-col>
+      </v-row>
+      <v-row no-gutters>
+            <v-col v-for="(item,index) in row2" :key="index" id="content">
+            <!-- <v-card class="pa-2" tile outlined> -->
+            {{item}}
+            <!-- </v-card> -->
+            </v-col>
+      </v-row>
+      <v-row no-gutters>
+            <v-col v-for="(item,index) in row3" :key="index" :cols="3" id="content">
+            <!-- <v-card class="pa-2" tile outlined> -->
+            {{item}}
+            <!-- </v-card> -->
+            </v-col>
+            <v-col><v-btn>sign up</v-btn></v-col>
+      </v-row>
+      <v-row no-gutters>
+            <v-col v-for="(item,index) in row4" :key="index" >
+            <!-- <v-card class="pa-2" tile outlined> -->
+            {{item}}
+            <!-- </v-card> -->
+            </v-col>
+      </v-row>
+</div>
 </template>
 
 <script>
@@ -40,6 +47,11 @@
         'mdi-linkedin',
         'mdi-instagram',
       ],
+      titles:["Product","Classes","Company","Subscribe to Panda"],
+      row1:["Website","HSK","About","Subscribe to Panda"],
+      row2:["Mobile APP","Live Class","Students","newsletter with updates"],
+      row3:["","KTV","Teachers",""],
+      row4:["","","",""]
     }),
   }
 </script>
