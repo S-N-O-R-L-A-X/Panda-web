@@ -30,13 +30,14 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data: () => ({
       valid: false,
       password: '',
       nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
+        v => !!v || 'Password is required',
+        v => v.length <= 10 || 'Password must be less than 10 characters',
       ],
       email: '',
       emailRules: [
@@ -44,8 +45,20 @@ export default {
         v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
       checkbox: true,
-     
+      
     }),
+    methods:
+    {
+      
+    },
+    computed: {
+      new_user() {
+        return {
+          password: this.password,
+          email:this.email,
+        }
+      }
+    },
 }
 </script>
 

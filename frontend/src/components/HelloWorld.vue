@@ -13,7 +13,7 @@
   <v-img id="vector3" src="../pics/Vector 3.png"></v-img>
   <v-img id="vector4" src="../pics/Vector 4.png"></v-img>
   <v-btn id="getStart">Get Started ></v-btn>
-  <v-icon id="arrowRight">mdi-arrow-right-drop-circle-outline</v-icon><span id="intro">Intro</span>
+  <v-icon id="arrowRight">mdi-arrow-right-drop-circle-outline</v-icon><v-span id="intro">Intro</v-span>
   <myfooter></myfooter>
 </div>
   
@@ -46,10 +46,9 @@ export default {
 #logo 
 {
   /* position: absolute; */
-  width: 152px;
-  height: 65px;
-  left: 96px;
-  top: 22px;
+  width: 9.05%;
+  left: 5.71%;
+  top: 3.75%;
 }
 
 .similarButton 
@@ -81,10 +80,10 @@ export default {
 #triangle 
 {
   position: absolute;
-  width: 130px;
-  height: 130px;
-  left: 2.37px;
-  top: 88.62px;
+  width: 7.74%;
+  height: 16.25%;
+  left:0.14%;
+  top: 11.077%;
 
   opacity: 0.6;
   transform: rotate(-42.37deg);
@@ -94,7 +93,7 @@ export default {
 {
   position: absolute;
   width: 75px;
-  height: 28px;
+  height: 3.5%;
   left: 633.5px;
   top: 40px;
 
@@ -330,10 +329,10 @@ export default {
   padding: 8px 24px;
 
   position: absolute;
-  width: 188px;
-  height: 56px;
-  left: 243px;
-  top: 470px;
+  width: 11.2%;
+  height: 7%;
+  left: 14.464%;
+  top: 47%;
 
   /* Button/Primary/Active */
 
@@ -354,18 +353,16 @@ export default {
 
   text-align: center;
   letter-spacing: 0.0015em;
-
-
   color: #FFFFFF;
 }
 
 #arrowRight
 {
   position: absolute;
-  left: 108px;
-  top: 478px;
-  width:40px;
-  height:40px;
+  left: 6.43%;
+  top: 47.8%;
+  width:4%;
+  height:4%;
   /* Light/Secondary/50 */
   color:#2A84C6;
   
@@ -375,10 +372,10 @@ export default {
 #intro
 {
   position: absolute;
-  width: 0px;
-  height: 48px;
+  width: 0;
+  height: 4.8%;
   left: 156px;
-  top: 486px;
+  top: 48.6%;
 
   
   /* Light/Gray/10 */

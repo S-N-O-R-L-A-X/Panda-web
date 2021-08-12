@@ -12,7 +12,7 @@
           <v-row><v-text-field v-model="email" :rules="emailRules"
           label="Emailaddress" required outlined></v-text-field></v-row>
           <v-row>
-              <v-text-field v-model="password" :rules="nameRules" :counter="10" 
+              <v-text-field v-model="password" :rules="passwordRules" 
               label="Password" required outlined></v-text-field>
           </v-row>
           <v-row>
@@ -26,7 +26,7 @@
           <v-card-title></v-card-title>
       </v-form>
       
-      <v-btn id="signup">Join Us →</v-btn>
+      <v-btn id="signup" @click="createUser()">Join Us →</v-btn>
       <v-row id="hint">Already a member? <router-link to="/signin">Sign in.</router-link></v-row>
 
 
@@ -35,15 +35,22 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data: () => ({
       valid: false,
-      password: '',
+      
       username:'',
       nameRules: [
         v => !!v || 'Name is required',
         v => v.length <= 10 || 'Name must be less than 10 characters',
       ],
+      password: '',
+      passwordRules: [
+        v => !!v || 'Password is required',
+        v => v.length >= 8  || 'Password must be more than 8 characters and less than 20 characters',
+      ],
+      
       email: '',
       emailRules: [
         v => !!v || 'E-mail is required',
@@ -53,6 +60,43 @@ export default {
       select: null,
       identities:["Teacher","Student"]
     }),
+    methods:
+    {
+      createUser(){
+        let user = this.new_user;
+        console.log(user);
+        axios.post('/api/register/', {params: user})
+          .then(response => {
+            if(response.success) {
+              this.$emit('change', 'Created!');
+              this.snackbar_text = "成功创建用户";
+              this.snackbar = true;
+            }
+            else{
+              throw new Error((response.message));
+            }
+          })
+          .catch(error => {
+            alert("新建用户失败：" + error.message);
+          })
+          .finally(e => {
+            
+          })
+      }
+    },
+    computed: {
+      new_user() {
+        return {
+          email:this.email,
+          username:this.username,
+          password: this.password,
+          // identity:this.select,
+          repeat_password:this.password
+        }
+      }
+    },
+    
+
 }
 </script>
 
