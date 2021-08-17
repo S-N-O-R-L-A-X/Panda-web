@@ -13,7 +13,7 @@
   <v-img id="vector3" src="../pics/Vector 3.png"></v-img>
   <v-img id="vector4" src="../pics/Vector 4.png"></v-img>
   <v-btn id="getStart">Get Started ></v-btn>
-  <v-icon id="arrowRight">mdi-arrow-right-drop-circle-outline</v-icon><v-span id="intro">Intro</v-span>
+  <v-icon id="arrowRight">mdi-arrow-right-drop-circle-outline</v-icon><span id="intro">Intro</span>
   <myfooter></myfooter>
 </div>
   

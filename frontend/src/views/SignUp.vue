@@ -1,5 +1,17 @@
 <template>
 <div>
+  <v-snackbar class="text-center ma-2" top v-model="snackbar" :timeout="3000" color="success">{{snackbar_text}}
+    <template v-slot:action="{ attrs }">
+        <v-btn
+          color="white"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+  </v-snackbar>
   <div>
     <v-img src="../pics/sign in1.jpg" height="100%" width="100%"></v-img>
   </div>
@@ -38,6 +50,8 @@
 import axios from 'axios'
 export default {
     data: () => ({
+      snackbar:false,
+      snackbar_text:'',
       valid: false,
       
       username:'',
@@ -63,11 +77,15 @@ export default {
     methods:
     {
       createUser(){
-        let user = this.new_user;
-        console.log(user);
-        axios.post('/api/register/', {params: user})
+        let user = this.new_user,formdata=new FormData();
+        Object.keys(user).forEach((key) => {
+          formdata.append(key, user[key]);
+        });
+        axios.post('/api/register/',formdata)
           .then(response => {
-            if(response.success) {
+            console.log(response);
+            console.log(response.status);
+            if(response.status===200) {
               this.$emit('change', 'Created!');
               this.snackbar_text = "成功创建用户";
               this.snackbar = true;
@@ -76,9 +94,9 @@ export default {
               throw new Error((response.message));
             }
           })
-          .catch(error => {
-            alert("新建用户失败：" + error.message);
-          })
+          // .catch(error => {
+          //   alert("新建用户失败：" + error.message);
+          // })
           .finally(e => {
             
           })

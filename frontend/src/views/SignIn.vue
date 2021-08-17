@@ -1,5 +1,18 @@
 <template>
 <div>
+  <v-snackbar class="text-center ma-2" top v-model="snackbar" :timeout="3000" color="success">{{snackbar_text}}
+    <v-spacer></v-spacer>
+    <template v-slot:action="{ attrs }">
+        <v-btn
+          color="white"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+  </v-snackbar>
   <div>
     <v-img src="../pics/sign in1.jpg" height="100%" width="100%"></v-img>
   </div>
@@ -21,7 +34,7 @@
           <v-card-title></v-card-title>
       </v-form>
       
-      <v-btn id="signin">Sign In →</v-btn>
+      <v-btn id="signin" @click="login()">Sign In →</v-btn>
       <v-row id="hint">Not a member? <router-link to="/signup">Create an account</router-link></v-row>
 
 
@@ -33,6 +46,8 @@
 import axios from 'axios'
 export default {
     data: () => ({
+      snackbar:false,
+      snackbar_text:'',
       valid: false,
       password: '',
       nameRules: [
@@ -49,7 +64,31 @@ export default {
     }),
     methods:
     {
-      
+        login(){
+        let user = this.new_user,formdata=new FormData();
+        Object.keys(user).forEach((key) => {
+          formdata.append(key, user[key]);
+        });
+        axios.post('/api/login/',formdata)
+          .then(response => {
+            console.log(response);
+            console.log(response.status);
+            if(response.status===200) {
+              this.$emit('change', 'Created!');
+              this.snackbar_text = "登录成功";
+              this.snackbar = true;
+            }
+            else{
+              throw new Error((response.message));
+            }
+          })
+          // .catch(error => {
+          //   alert("新建用户失败：" + error.message);
+          // })
+          .finally(e => {
+            
+          })
+      }
     },
     computed: {
       new_user() {
