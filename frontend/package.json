@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node index.js",
+    "server": "nodemon index.js --ignore client",
+    "push": "npm run build && scp -r dist/* root@110.40.185.37:/www"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "lib-flexible": "^0.3.2",
+    "postcss-px2rem": "^0.3.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",

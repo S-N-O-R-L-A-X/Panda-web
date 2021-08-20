@@ -121,7 +121,7 @@ export default {
 <style scoped>
 #card
 {
-  width:839px;
+  width:50%;
   height:100%;
   position:absolute;
   right:0;
@@ -131,43 +131,26 @@ export default {
 #v-card-title
 {
   /* width:74px; */
-  height:22px;
+  height:2.4%;
   position:absolute;
-  top:186px;
-  left:383px; 
+  top:17%;
+  left:45%; 
 
   font-size:16px;
 }
 
 #logo
 {
-    width: 151px;
-    height:63px;
+    width: 18%;
+    height:6%;
     position: absolute;
     left:344px;
     top:101px;
 }
 
-
-#wechat
-{
-    background-color:#00AD22;
-    position: absolute;
-    
-    top:130px;
-}
-
-#facebook
-{
-    background-color:#476AF0;
-    position: absolute;
-    
-    top:194px;
-}
-
 #form
 {
-  width:375px;
+  width:44.6%;
   position: absolute;
   left:232px;
   top:281px;
