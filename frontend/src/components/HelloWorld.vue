@@ -116,7 +116,7 @@ export default {
   flex-grow: 0;
   margin: 0px 36px;
 
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
   /* linear-gradient(0deg, #1443BD, #1443BD); */
 
 }
