@@ -1,112 +1,416 @@
 <template>
 <div>
-      <v-card color="#F2F2F2" class="pink--text" min-height="160px" id="card1">
-            <v-row  no-gutters>
-                  <v-col v-for="(item,index) in titles" :key="index" id="content">
-                  <!-- <v-card class="pa-2" tile outlined> -->
-                  <strong>{{item}}</strong>
-                  <!-- </v-card> -->
-                  </v-col>
-            </v-row>
-            <v-divider></v-divider>
-            <v-row no-gutters>
-                  <v-col v-for="(item,index) in row1" :key="index" id="content">
-                  <!-- <v-card class="pa-2" tile outlined> -->
-                  {{item}}
-                  <!-- </v-card> -->
-                  </v-col>
-            </v-row>
-            <v-row no-gutters>
-                  <v-col v-for="(item,index) in row2" :key="index" id="content">
-                  
-                  {{item}}
-                  
-                  </v-col>
-            </v-row>
-            <v-row no-gutters>
-                  <v-col v-for="(item,index) in row3" :key="index" :cols="3" id="content">
-                  {{item}}
-                  </v-col>
-                  
-            </v-row>
-
-            <v-row no-gutters>
-                  <v-col v-for="(item,index) in row4" :key="index" :cols="3" id="content">
-                  {{item}}
-                  </v-col>
-                  <v-col cols="3"><v-btn id="but" >sign up</v-btn></v-col>
-            </v-row>
-      </v-card>
-      
-      <v-card color="#F2F2F2" class="pink--text" min-height="80px" id="card2">
-            <v-row>
-                  <v-col col="3">
-                        <v-img src="../pics/LOGO.png" id="logo"></v-img>
-                  </v-col>
-                  <v-divider vertical inset></v-divider>
-
-                  <v-col col="4" >
-                        Copyright <v-icon color="#F56D7E">mdi-alpha-c-circle-outline</v-icon> 2021 Panda Singing Chinese,Inc.
-                  </v-col>
-                  <v-spacer></v-spacer>
-                  <v-col col="5">
-                  <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
-                        <v-icon size="20px" color="#F56D7E">{{ icon }}</v-icon>
-
-                  </v-btn>
-                  <v-btn class="mx-4" icon>
-                        <svg t="1627722570179" class="icon" viewBox="0 0 2299 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="848" width="20px" 
-                        height="20px"><path d="M1775.840814 322.588002c6.0164 1.002733 53.144869-9.525967 55.150336-6.016401 3.0082 4.5123 24.065601 155.92504 18.550567 156.927774s-44.621635 10.027334-44.621635 10.027334c-3.0082-20.556034-28.577901-147.903173-29.079268-160.938707m75.205003-14.539634l20.556034 162.944174c10.5287-0.501367 53.144869-3.509567 57.155803-4.010934-6.0164-61.668103-16.545101-158.933241-16.545101-158.93324-20.054668-4.010934-41.112069-4.010934-61.166736 0m-40.610702 226.116376s92.752838-23.564234 126.344406-12.0328c17.046467 61.668103 48.131202 407.611118 51.139402 421.649386-21.057401 2.506833-90.246004 8.523234-95.761037 10.027333-4.5123-26.071068-81.72277-403.098818-81.722771-419.643919m343.436183-207.565809c5.515034 1.5041 54.648969-5.013667 55.150335-1.5041 1.002733 12.032801 6.0164 157.42914 0.501367 157.930507s-44.621635 4.010934-44.621635 4.010934c-1.002733-20.054668-12.032801-146.90044-11.030067-160.437341m75.70637-4.010933l4.010933 160.938707c10.5287 0 52.643502 2.506833 57.155803 2.005467-1.002733-61.668103 0-158.933241 0-158.933241-20.054668-3.509567-40.610702-5.013667-61.166736-4.010933m-64.676303 216.089043s94.758304-12.534167 126.845772 2.506833c7.019134 72.196803 6.0164 408.613852 7.019134 422.652119-21.558768 0-90.246004 1.002733-95.761038 2.005467-1.002733-26.071068-39.607968-410.619319-38.103868-427.164419m-220.099977-413.627519c54.648969 278.759879 96.262404 755.058234 97.766504 785.641602 0 0 43.117535 1.002733 91.750105 4.010934C2105.740095 614.383415 2070.644427 134.575493 2071.145794 119.033126c-12.032801-13.536901-126.344406 6.0164-126.344406 6.0164m-120.328005 659.297196c-10.5287-78.213204-290.291313-166.955108-447.720454-138.377206 0 0-19.553301-172.470141-27.073801-339.425248-6.517767-143.390873-1.002733-282.770813 0.501366-305.833681-10.5287-7.5205-123.837572 46.627102-185.004308 69.188603 0 0 73.199537 309.844614 126.344406 952.59671 0 0 84.730971 9.0246 230.12731-19.051934s317.365114-115.815705 302.825481-219.097244m-341.932083 140.88404l-24.566967-176.982441c6.0164-3.0082 156.927774 53.144869 172.971507 63.172203-2.506833 11.030067-148.40454 113.810238-148.40454 113.810238M610.664628 322.588002c6.0164 1.002733 53.144869-9.525967 55.150335-6.016401 3.0082 4.5123 24.065601 155.92504 18.550568 156.927774s-44.621635 10.027334-44.621635 10.027334c-3.0082-20.556034-28.577901-147.903173-29.079268-160.938707m75.205003-14.539634l20.556034 162.944174c10.5287-0.501367 53.144869-3.509567 57.155803-4.010934-6.517767-61.668103-16.545101-158.933241-16.545101-158.93324-20.054668-4.010934-41.112069-4.010934-61.166736 0m-40.610702 226.116376s92.752838-23.564234 126.344406-12.0328c17.046467 61.668103 48.131202 407.611118 51.139402 421.649386-21.057401 2.506833-90.246004 8.523234-95.761037 10.027333-4.5123-26.071068-81.72277-403.098818-81.722771-419.643919m343.436182-207.565809c5.515034 1.5041 54.648969-5.013667 55.150336-1.5041 1.002733 12.032801 6.0164 157.42914 0.501367 157.930507s-44.621635 4.010934-44.621635 4.010934c-1.002733-20.054668-11.531434-146.90044-11.030068-160.437341m75.706371-4.010933l4.010933 160.938707c10.5287 0 52.643502 2.506833 57.155803 2.005467-1.002733-61.668103 0-158.933241 0-158.933241-20.054668-3.509567-40.610702-4.5123-61.166736-4.010933m-64.676303 216.089043s94.758304-12.534167 126.845772 2.506833c7.019134 72.196803 6.0164 408.613852 7.019134 422.652119-21.558768 0-90.246004 1.002733-95.761038 2.005467-0.501367-26.071068-39.607968-410.619319-38.103868-427.164419m-220.099977-413.627519c54.648969 278.759879 96.262404 755.058234 97.766504 785.641602 0 0 43.117535 1.002733 91.750105 4.010934-28.577901-300.318647-63.67357-780.126569-63.172203-796.170303-12.032801-13.035534-126.344406 6.517767-126.344406 6.517767m-120.328005 659.297196c-10.5287-78.213204-290.291313-166.955108-447.720454-138.377206 0 0-19.553301-172.470141-27.073801-339.425248-6.517767-143.390873-1.002733-282.770813 0.501366-305.833681C174.475608-6.308547 61.166736 47.337689 0 69.89919c0 0 73.199537 309.844614 126.344406 952.59671 0 0 84.730971 9.0246 230.12731-19.051934s317.365114-115.815705 302.825481-219.097244m-341.932083 140.88404l-24.566967-176.982441c6.0164-3.0082 156.927774 53.144869 172.971507 63.172203-2.506833 11.030067-148.40454 113.810238-148.40454 113.810238" p-id="849" fill="#F56D7E"></path></svg>
-                  </v-btn>
-                  </v-col>
-            </v-row>
-
-      </v-card>
+  <v-img id="logo" src="../pics/LOGO.png"></v-img>
+  <router-link to="/classes" id="classes">Classes</router-link>
+  <router-link to="/download" id="download">Download</router-link>
+  <router-link to="/join" id="join">Join us</router-link>
+  <p id="title">Learning Chinese with Panda!</p>
+  <p id="illustration">Professional and interesting Chinese learning community.</p>
+  <v-btn id="signIn" @click="toSignIn()">Sign In</v-btn>
+  <v-btn id="signUp" @click="toSignUp()">Sign Up</v-btn>
+  <v-img id="triangle" src="../pics/Point-line triangle cube.png"></v-img>
+  <v-img id="banner" src="../pics/Banner.png"></v-img>
+  <v-img id="vector3" src="../pics/Vector 3.png"></v-img>
+  <v-img id="vector4" src="../pics/Vector 4.png"></v-img>
+  <v-btn id="getStart">Get Started ></v-btn>
+  <v-icon id="arrowRight">mdi-arrow-right-drop-circle-outline</v-icon><span id="intro">Intro</span>
+  <myfooter></myfooter>
 </div>
+  
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      icons: ['mdi-wechat',
-        'mdi-youtube',
-        'mdi-instagram',
-        'mdi-facebook',],
-      titles:["Product","Classes","Company","Subscribe to Panda"],
-      row1:["Website","HSK","About","Sign up to receive our"],
-      row2:["Mobile APP","Live Class","Students","newsletter with updates"],
-      row3:["","KTV","Teachers"],
-      row4:["","","Collaborator"]
-    }),
+import myfooter from "./myFooter"
+export default {
+  components:{myfooter},
+  data () {
+      return {
+        dropdown_font: ['Arial', 'Calibri', 'Courier', 'Verdana'],
+      }
+    },
+  methods: {
+    toSignIn()
+    {
+      this.$router.push('/signin');
+    },
+    toSignUp()
+    {
+      this.$router.push('/signup');
+    }
   }
+  
+}
 </script>
 
-<style scoped>
-#logo
+<style>
+#logo 
 {
-      position:absolute;
-      top:0px;
-      width:156px; 
-      height:65px;
+  /* position: absolute; */
+  width: 9.05%;
+  left: 5.71%;
+  top: 3.75%;
 }
 
-#but
+.similarButton 
 {
-      background-color:#ffffff;
-      color:#204062;
+  position: absolute;
+  width: 75px;
+  height: 28px;
+  left: 200px;
+  top: 30px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 140% */
+
+  letter-spacing: 0.0015em;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 36px;
 }
 
-#card1
+#triangle 
 {
-      position: absolute;
-      bottom:80px;
-      width:100%;
+  position: absolute;
+  width: 7.74%;
+  height: 16.25%;
+  left:0.14%;
+  top: 11.077%;
+
+  opacity: 0.6;
+  transform: rotate(-42.37deg);
 }
 
-#card2
+#classes
 {
-      position:absolute;
-      bottom:0px;
-      width:100%;
+  position: absolute;
+  width: 75px;
+  height: 3.5%;
+  left: 633.5px;
+  top: 40px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color:#1443BD;
+  line-height: 28px;
+  text-decoration: none;  
+  /* identical to box height, or 140% */
+
+  letter-spacing: 0.0015em;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 36px;
+
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+  /* linear-gradient(0deg, #1443BD, #1443BD); */
+
 }
+
+#download
+{
+  position: absolute;
+  width: 105px;
+  height: 28px;
+  left: 760.5px;
+  top: 40px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color:#1443BD;
+  text-decoration: none;
+/* identical to box height, or 140% */
+
+
+  letter-spacing: 0.0015em;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 36px;
+}
+
+#join
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  position: absolute;
+  width: 140px;
+  height: 28px;
+  left: 885.5px;
+  top: 40px;
+
+  text-decoration: none;  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color:#1443BD;
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin: 0px 36px;
+}
+
+
+#signIn
+{
+  position: absolute;
+  width: 100px;
+  height: 36px;
+  left: 1175px;
+  top: 36px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  border-radius: 4px;
+  color: #2A84C6;
+  background-color: #ffffff;
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+
+#signUp
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  position: absolute;
+  width: 107px;
+  height: 36px;
+  left: 1258px;
+  top: 36px;
+  color:#ffffff;
+  /* Button/Primary/Active */
+
+  background: linear-gradient(0deg, rgba(13, 50, 145, 0.2) 0%, rgba(16, 54, 151, 0) 100%), #1443BD;
+  border-radius: 4px;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+
+#title
+{
+  position: absolute;
+  width: 600px;
+  height: 144px;
+  left: 108px;
+  top: 222px;
+
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 72px;
+  /* or 120% */
+  color:#1A1A5E;
+  letter-spacing: -0.005em;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  margin: 0px 10px;
+}
+
+#illustration
+{
+  position: absolute;
+  width: 492px;
+  height: 24px;
+  left: 108px;
+  top: 390px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color:#3f477c;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.005em;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  margin: 0px 10px;
+}
+
+
+#banner
+{
+  position: absolute;
+  width: 496px;
+  height: 420px;
+  right: 108px;
+  top: 182px;
+}
+
+#vector3
+{
+  position: absolute;
+  left: 0%;
+  right: -3.55%;
+  top: 12.93%;
+  bottom: 0%;
+
+  /* Dark/Error/90 */
+  /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #D93A56; */
+}
+
+#vector4
+{
+  position: absolute;
+  left: 0.34%;
+  right: 41.89%;
+  top: 64.64%;
+  bottom: 2.91%;
+
+  /* Light/Error/5 */
+  /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), #F56D7E; */
+  opacity: 0.4;
+}
+
+
+#getStart
+{
+  /* Auto Layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+
+  position: absolute;
+  width: 11.2%;
+  height: 7%;
+  left: 14.464%;
+  top: 47%;
+
+  /* Button/Primary/Active */
+
+  background: linear-gradient(0deg, rgba(13, 50, 145, 0.2) 0%, rgba(16, 54, 151, 0) 100%), #1443BD;
+  border-radius: 8px;
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin: 0px 24px;
+
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+
+
+  text-align: center;
+  letter-spacing: 0.0015em;
+  color: #FFFFFF;
+}
+
+#arrowRight
+{
+  position: absolute;
+  left: 6.43%;
+  top: 47.8%;
+  width:4%;
+  height:4%;
+  /* Light/Secondary/50 */
+  color:#2A84C6;
+  
+  box-sizing: border-box;
+}
+
+#intro
+{
+  position: absolute;
+  width: 0;
+  height: 4.8%;
+  left: 156px;
+  top: 48.6%;
+
+  
+  /* Light/Gray/10 */
+
+  border: 2px solid #E5E5E5;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 24px;
+
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  text-align: center;
+  letter-spacing: 0.0125em;
+
+  /* Light/Secondary/50 */
+
+  color: #2A84C6;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 8px;
+}
+
+
 </style>

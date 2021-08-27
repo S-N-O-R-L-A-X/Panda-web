@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-snackbar class="text-center ma-2" top v-model="snackbar" :timeout="3000" color="success">{{snackbar_text}}
+  <!-- <v-snackbar class="text-center ma-2" top v-model="snackbar" :timeout="3000" color="success">{{snackbar_text}}
     <template v-slot:action="{ attrs }">
         <v-btn
           color="white"
@@ -11,38 +11,11 @@
           Close
         </v-btn>
       </template>
-  </v-snackbar>
-  <div>
+  </v-snackbar> -->
+  <div class="container">
     <v-img src="../pics/sign in1.jpg" height="100%" width="100%"></v-img>
   </div>
-  <!-- <v-img src="../pics/sign in1.jpg"></v-img> -->
-  <v-card  id="card">
-      <v-img src="../pics/LOGO.png" id="logo"></v-img>
-      <v-card-title id="v-card-title">welcome</v-card-title>
-      
-      <v-form id="form">
-          <v-row><v-text-field v-model="email" :rules="emailRules"
-          label="Emailaddress" required outlined></v-text-field></v-row>
-          <v-row>
-              <v-text-field v-model="password" :rules="passwordRules" 
-              label="Password" required outlined></v-text-field>
-          </v-row>
-          <v-row>
-              <v-text-field v-model="username" :rules="nameRules" :counter="10" 
-              label="Username" required outlined></v-text-field>
-          </v-row>
-          <v-row>
-            <v-select v-model="select" :items="identities" 
-            :rules="[v =>!!v||'Itendentity is required']" label="Identity" required></v-select>
-          </v-row>
-          <v-card-title></v-card-title>
-      </v-form>
-      
-      <v-btn id="signup" @click="createUser()">Join Us →</v-btn>
-      <v-row id="hint">Already a member? <router-link to="/signin">Sign in.</router-link></v-row>
-
-
-  </v-card>
+  
 </div>
 </template>
 
@@ -119,6 +92,18 @@ export default {
 </script>
 
 <style scoped>
+*
+{
+  padding:0;
+}
+
+#container1
+{
+    width:50%;
+    margin:0 auto;
+    left:0;
+}
+
 #card
 {
   width:50%;

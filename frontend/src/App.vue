@@ -5,6 +5,7 @@
       <router-link to="/about"></router-link>
       <router-link to="/classes"></router-link>
       <router-link to="/join"></router-link>
+      <router-link to="/test"></router-link>
     </div>
     <router-view/>
   </v-app>
@@ -18,5 +19,18 @@ export default {
   data: () => ({
     //
   }),
+  mounted(){
+      window.addEventListener('hashchange',()=>{
+          var currentPath = window.location.hash.slice(1); // 获取输入的路由
+          if(this.$router.path !== currentPath){
+              this.$router.push(currentPath); // 动态跳转
+          }
+      },false);
+  }
 };
+  
 </script>
+
+<style lang="less">
+  
+</style>

@@ -12,34 +12,28 @@
         </v-btn>
       </template>
   </v-snackbar>
-  <div>
-    <v-img src="../pics/sign in1.jpg" height="100%" width="100%"></v-img>
-  </div>
-  <!-- <v-img src="../pics/sign in1.jpg"></v-img> -->
+  
   <v-card  id="card">
-      <v-img src="../pics/LOGO.png" id="logo"></v-img>
-      <v-card-title id="v-card-title">welcome</v-card-title>
-      
-      <v-form id="form">
-          <v-row><v-text-field v-model="email" :rules="emailRules"
-          label="Emailaddress" required outlined></v-text-field></v-row>
-          <v-row>
-              <v-text-field v-model="password" :rules="passwordRules" 
-              label="Password" required outlined></v-text-field>
-          </v-row>
-          <v-row>
-              <v-text-field v-model="username" :rules="nameRules" :counter="10" 
-              label="Username" required outlined></v-text-field>
-          </v-row>
-          <v-row>
-            <v-select v-model="select" :items="identities" 
-            :rules="[v =>!!v||'Identity is required']" label="Identity" required></v-select>
-          </v-row>
-          <v-card-title></v-card-title>
-      </v-form>
-      
-      <v-btn id="signup" @click="createUser()">Join Us →</v-btn>
-      <v-row id="hint">Already a member? <router-link to="/signin">Sign in.</router-link></v-row>
+    <div id="logoContainer">
+      <v-img src="../../public/LOGO.png" ></v-img>
+    </div> 
+    <v-form id="form">
+        <v-row><v-text-field v-model="email" :rules="emailRules"
+        label="Emailaddress" required outlined></v-text-field></v-row>
+        <v-row>
+            <v-text-field v-model="password" :rules="passwordRules" 
+            label="Password" required outlined></v-text-field>
+        </v-row>
+        
+        <v-row>
+          <v-select v-model="select" :items="identities" 
+          :rules="[v =>!!v||'Identity is required']" label="Identity" required></v-select>
+        </v-row>
+        <v-card-title></v-card-title>
+    </v-form>
+    
+    <v-btn id="signup" @click="createUser()">Join Us →</v-btn>
+    <v-row id="hint">Already a member? <router-link to="/signin">Sign in.</router-link></v-row>
 
 
   </v-card>
@@ -54,11 +48,11 @@ export default {
       snackbar_text:'',
       valid: false,
       
-      username:'',
-      nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
-      ],
+      // username:'',
+      // nameRules: [
+      //   v => !!v || 'Name is required',
+      //   v => v.length <= 10 || 'Name must be less than 10 characters',
+      // ],
       password: '',
       passwordRules: [
         v => !!v || 'Password is required',
@@ -106,7 +100,7 @@ export default {
       new_user() {
         return {
           email:this.email,
-          username:this.username,
+          // username:this.username,
           password: this.password,
           // identity:this.select,
           repeat_password:this.password
@@ -121,60 +115,54 @@ export default {
 <style scoped>
 #card
 {
-  width:50%;
+  width:100%;
   height:100%;
   position:absolute;
-  right:0;
   top:0;
+  margin:0;
 }
 
-#v-card-title
-{
-  /* width:74px; */
-  height:2.4%;
-  position:absolute;
-  top:17%;
-  left:45%; 
 
-  font-size:16px;
+#logoContainer
+{
+    left:20%;
+    top:10%;
+    height:20%;
+    width:40%;
 }
 
 #logo
 {
-    width: 18%;
-    height:6%;
-    position: absolute;
-    left:344px;
-    top:101px;
+    width: 100%;
+    height:100%;
 }
 
 #form
 {
   width:44.6%;
   position: absolute;
-  left:232px;
-  top:281px;
+  left:25%;
+  top:35%;
 }
 
 #signup
 {
-  
-  width: 375px;
-  height:50px;
+  width: 30%;
+  height:6.25%;
   position: absolute;
   background-color:#1443BD;
   color:#ffffff;
-  top:620px;
-  left:232px;
+  top:75%;
+  left:35%;
 }
 
 #hint
 {
   position: absolute;
-  width: 247px;
-  height: 20px;
-  left: 350px;
-  top: 750px;
+  
+  height: 2.5%;
+  left:35%;
+  top: 93.75%;
 
   font-family: Montserrat;
   font-style: normal;

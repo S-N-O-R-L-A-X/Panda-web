@@ -4,6 +4,7 @@
   <router-link to="/classes" id="classes">Classes</router-link>
   <router-link to="/download" id="download">Download</router-link>
   <router-link to="/join" id="join">Join us</router-link>
+  
   <p id="title">Learning Chinese with Panda!</p>
   <p id="illustration">Professional and interesting Chinese learning community.</p>
   <v-btn id="signIn" @click="toSignIn()">Sign In</v-btn>
@@ -46,11 +47,11 @@ export default {
 #logo 
 {
   /* position: absolute; */
-  width: 9.05%;
-  left: 5.71%;
-  top: 3.75%;
+  width: 152px;
+  height: 65px;
+  left: 96px;
+  top: 22px;
 }
-
 .similarButton 
 {
   position: absolute;
@@ -58,45 +59,36 @@ export default {
   height: 28px;
   left: 200px;
   top: 30px;
-
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
   /* identical to box height, or 140% */
-
   letter-spacing: 0.0015em;
-
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0px 36px;
 }
-
 #triangle 
 {
   position: absolute;
-  width: 7.74%;
-  height: 16.25%;
-  left:0.14%;
-  top: 11.077%;
-
+  width: 130px;
+  height: 130px;
+  left: 2.37px;
+  top: 88.62px;
   opacity: 0.6;
   transform: rotate(-42.37deg);
 }
-
 #classes
 {
   position: absolute;
   width: 75px;
-  height: 3.5%;
+  height: 28px;
   left: 633.5px;
   top: 40px;
-
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
@@ -105,22 +97,15 @@ export default {
   line-height: 28px;
   text-decoration: none;  
   /* identical to box height, or 140% */
-
   letter-spacing: 0.0015em;
-
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0px 36px;
-
-  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   /* linear-gradient(0deg, #1443BD, #1443BD); */
-
 }
-
 #download
 {
   position: absolute;
@@ -128,7 +113,6 @@ export default {
   height: 28px;
   left: 760.5px;
   top: 40px;
-
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
@@ -137,19 +121,13 @@ export default {
   color:#1443BD;
   text-decoration: none;
 /* identical to box height, or 140% */
-
-
   letter-spacing: 0.0015em;
-
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
   margin: 0px 36px;
 }
-
 #join
 {
   display: flex;
@@ -157,13 +135,11 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 0px;
-
   position: absolute;
   width: 140px;
   height: 28px;
   left: 885.5px;
   top: 40px;
-
   text-decoration: none;  
   font-family: Montserrat;
   font-style: normal;
@@ -172,14 +148,11 @@ export default {
   line-height: 28px;
   color:#1443BD;
   /* Inside Auto Layout */
-
   flex: none;
   order: 2;
   flex-grow: 0;
   margin: 0px 36px;
 }
-
-
 #signIn
 {
   position: absolute;
@@ -187,7 +160,6 @@ export default {
   height: 36px;
   left: 1175px;
   top: 36px;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -197,13 +169,11 @@ export default {
   color: #2A84C6;
   background-color: #ffffff;
   /* Inside Auto Layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0px 0px;
 }
-
 #signUp
 {
   display: flex;
@@ -218,18 +188,14 @@ export default {
   top: 36px;
   color:#ffffff;
   /* Button/Primary/Active */
-
   background: linear-gradient(0deg, rgba(13, 50, 145, 0.2) 0%, rgba(16, 54, 151, 0) 100%), #1443BD;
   border-radius: 4px;
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
   margin: 0px 0px;
 }
-
 #title
 {
   position: absolute;
@@ -237,7 +203,6 @@ export default {
   height: 144px;
   left: 108px;
   top: 222px;
-
   font-family: Ubuntu;
   font-style: normal;
   font-weight: bold;
@@ -246,16 +211,12 @@ export default {
   /* or 120% */
   color:#1A1A5E;
   letter-spacing: -0.005em;
-
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 0;
   flex-grow: 1;
   margin: 0px 10px;
 }
-
 #illustration
 {
   position: absolute;
@@ -263,7 +224,6 @@ export default {
   height: 24px;
   left: 108px;
   top: 390px;
-
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -271,19 +231,13 @@ export default {
   line-height: 24px;
   color:#3f477c;
   /* identical to box height, or 150% */
-
   letter-spacing: 0.005em;
-
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 0;
   flex-grow: 1;
   margin: 0px 10px;
 }
-
-
 #banner
 {
   position: absolute;
@@ -292,33 +246,25 @@ export default {
   right: 108px;
   top: 182px;
 }
-
 #vector3
 {
   position: absolute;
-  left: 0%;
-  right: -3.55%;
-  top: 12.93%;
-  bottom: 0%;
-
+  left: 0;
+  top: 89.66px;
+  width:1280px;
   /* Dark/Error/90 */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #D93A56; */
 }
-
 #vector4
 {
   position: absolute;
-  left: 0.34%;
-  right: 41.89%;
-  top: 64.64%;
-  bottom: 2.91%;
-
+  width:855px;
+  left: 5px;
+  top: 448.27px;
   /* Light/Error/5 */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), #F56D7E; */
   opacity: 0.4;
 }
-
-
 #getStart
 {
   /* Auto Layout */
@@ -327,90 +273,68 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 8px 24px;
-
   position: absolute;
-  width: 11.2%;
-  height: 7%;
-  left: 14.464%;
-  top: 47%;
-
+  width: 188px;
+  height: 56px;
+  left: 243px;
+  top: 470px;
   /* Button/Primary/Active */
-
   background: linear-gradient(0deg, rgba(13, 50, 145, 0.2) 0%, rgba(16, 54, 151, 0) 100%), #1443BD;
   border-radius: 8px;
-
   flex: none;
   order: 2;
   flex-grow: 0;
   margin: 0px 24px;
-
   font-family: Ubuntu;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 28px;
-
-
   text-align: center;
   letter-spacing: 0.0015em;
   color: #FFFFFF;
 }
-
 #arrowRight
 {
   position: absolute;
-  left: 6.43%;
-  top: 47.8%;
-  width:4%;
-  height:4%;
+  left: 108px;
+  top: 478px;
+  width:40px;
+  height:40px;
   /* Light/Secondary/50 */
   color:#2A84C6;
   
   box-sizing: border-box;
 }
-
 #intro
 {
   position: absolute;
-  width: 0;
-  height: 4.8%;
+  width: 0px;
+  height: 48px;
   left: 156px;
-  top: 48.6%;
-
+  top: 486px;
   
   /* Light/Gray/10 */
-
   border: 2px solid #E5E5E5;
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
   margin: 0px 24px;
-
   font-family: Ubuntu;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
   /* identical to box height, or 150% */
-
   text-align: center;
   letter-spacing: 0.0125em;
-
   /* Light/Secondary/50 */
-
   color: #2A84C6;
-
-
   /* Inside Auto Layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
   margin: 0px 8px;
 }
-
-
 </style>
