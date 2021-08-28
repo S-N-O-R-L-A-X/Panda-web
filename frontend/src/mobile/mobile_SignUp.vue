@@ -26,6 +26,11 @@
         </v-row>
         
         <v-row>
+              <v-text-field v-model="username" :rules="nameRules" :counter="10" 
+              label="Username" required outlined></v-text-field>
+        </v-row>
+
+        <v-row>
           <v-select v-model="select" :items="identities" 
           :rules="[v =>!!v||'Identity is required']" label="Identity" required></v-select>
         </v-row>
@@ -48,11 +53,11 @@ export default {
       snackbar_text:'',
       valid: false,
       
-      // username:'',
-      // nameRules: [
-      //   v => !!v || 'Name is required',
-      //   v => v.length <= 10 || 'Name must be less than 10 characters',
-      // ],
+      username:'',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => v.length <= 10 || 'Name must be less than 10 characters',
+      ],
       password: '',
       passwordRules: [
         v => !!v || 'Password is required',
@@ -100,9 +105,9 @@ export default {
       new_user() {
         return {
           email:this.email,
-          // username:this.username,
+          username:this.username,
           password: this.password,
-          // identity:this.select,
+          identity:this.select,
           repeat_password:this.password
         }
       }
@@ -125,7 +130,7 @@ export default {
 
 #logoContainer
 {
-    left:20%;
+    text-align:center;
     top:10%;
     height:20%;
     width:40%;
@@ -133,6 +138,7 @@ export default {
 
 #logo
 {
+    text-align:center;
     width: 100%;
     height:100%;
 }
