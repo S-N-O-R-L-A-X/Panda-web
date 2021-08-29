@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style>
+
 #logo 
 {
   /* position: absolute; */
@@ -232,11 +233,11 @@ export default {
 
 #title
 {
-  position: absolute;
-  width: 600px;
-  height: 144px;
-  left: 108px;
-  top: 222px;
+  /* position: absolute; */
+  width: 50%;
+  height: 10%;
+  left: 20%;
+  top: 25%;
 
   font-family: Ubuntu;
   font-style: normal;

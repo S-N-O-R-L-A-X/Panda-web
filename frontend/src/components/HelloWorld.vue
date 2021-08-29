@@ -196,13 +196,14 @@ export default {
   flex-grow: 0;
   margin: 0px 0px;
 }
+
 #title
 {
-  position: absolute;
-  width: 600px;
-  height: 144px;
-  left: 108px;
-  top: 222px;
+  /* position: absolute; */
+  /* width: 20%;
+  height: 10%; */
+  left: 7%;
+  top: 20%;
   font-family: Ubuntu;
   font-style: normal;
   font-weight: bold;
@@ -217,6 +218,7 @@ export default {
   flex-grow: 1;
   margin: 0px 10px;
 }
+
 #illustration
 {
   position: absolute;

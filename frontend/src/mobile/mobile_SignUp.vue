@@ -17,6 +17,8 @@
     <div id="logoContainer">
       <v-img src="../../public/LOGO.png" ></v-img>
     </div> 
+    
+    
     <v-form id="form">
         <v-row><v-text-field v-model="email" :rules="emailRules"
         label="Emailaddress" required outlined></v-text-field></v-row>
@@ -118,6 +120,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 #card
 {
   width:100%;
@@ -134,6 +138,7 @@ export default {
     top:10%;
     height:20%;
     width:40%;
+    margin:0 auto;
 }
 
 #logo
@@ -142,6 +147,8 @@ export default {
     width: 100%;
     height:100%;
 }
+
+
 
 #form
 {
