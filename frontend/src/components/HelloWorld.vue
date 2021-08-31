@@ -36,7 +36,12 @@ export default {
     },
     toSignUp()
     {
-      this.$router.push('/signup');
+      if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+) 
+        this.$router.push('/M_signup');
+      
+      else
+        this.$router.push('/signup');
     }
   }
   

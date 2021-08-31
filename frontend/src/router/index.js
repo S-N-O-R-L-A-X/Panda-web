@@ -9,6 +9,7 @@ import SignUp from '../views/SignUp.vue'
 import Backup from '../components/backup.vue'
 import Test from '../mobile/test.vue'
 import M_signup from '../mobile/mobile_SignUp.vue'
+import M_signin from '../mobile/mobile_SignIn.vue'
 
 Vue.use(VueRouter)
 
@@ -66,6 +67,11 @@ const routes = [
     path: '/m_signup',
     name: 'M_signup',
     component: M_signup
+  },
+  {
+    path: '/m_signin',
+    name: 'M_signin',
+    component: M_signin
   },
 ]
 
