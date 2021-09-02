@@ -1,27 +1,50 @@
 <template>
 <div>
-  <v-img id="logo" src="../pics/LOGO.png"></v-img>
-  <router-link to="/classes" id="classes">Classes</router-link>
-  <router-link to="/download" id="download">Download</router-link>
-  <router-link to="/join" id="join">Join us</router-link>
+  <v-row>
+    <v-col cols="5">
+      <v-img src="../pics/LOGO.png" max-width="12rem"></v-img>
+    </v-col>
+    <v-col cols="3"><v-btn @click="toSignIn()" class="white blue--text">Sign In</v-btn></v-col>
+    <v-col cols="4"><v-btn @click="toSignUp()" class="indigo accent-4  white--text">Sign Up</v-btn></v-col>
+  </v-row>
+  <v-row>
+    <v-app-bar color="#F2F2F2" >
+      <v-col cols="4"><router-link to="/classes" >Classes</router-link></v-col>
+      <v-col cols="4"><router-link to="/download" >Download</router-link></v-col>
+      <v-col cols="4"><router-link to="/join">Join us</router-link></v-col>
+    </v-app-bar>
+  </v-row>
   
-  <p id="title">Learning Chinese with Panda!</p>
-  <p id="illustration">Professional and interesting Chinese learning community.</p>
-  <v-btn id="signIn" @click="toSignIn()">Sign In</v-btn>
-  <v-btn id="signUp" @click="toSignUp()">Sign Up</v-btn>
-  <v-img id="triangle" src="../pics/Point-line triangle cube.png"></v-img>
-  <v-img id="banner" src="../pics/Banner.png"></v-img>
-  <v-btn id="getStart">Get Started ></v-btn>
-  <v-icon id="arrowRight">mdi-arrow-right-drop-circle-outline</v-icon><span id="intro">Intro</span>
-  <myfooter></myfooter>
+  <v-row>
+    <v-col cols="12">
+      <v-card height="100%">
+        <v-img height="30%" src="../pics/Banner.png"></v-img>
+        <v-card-title style="color:#1A1A5E;">Learning Chinese with Panda!</v-card-title>
+        <v-card-subtitle>Professional and interesting Chinese learning community.</v-card-subtitle>
+
+        <v-card-actions>
+          <v-row>
+            <v-col cols="3">
+              <v-icon class="blue--text">mdi-arrow-right-drop-circle-outline</v-icon><span class="blue--text">Intro</span>
+            </v-col>
+            <v-col cols="3">
+              <v-btn class="indigo accent-4 white--text">Get Started ></v-btn>
+            </v-col>
+          </v-row>
+        </v-card-actions>
+      </v-card>
+    </v-col>  
+  </v-row>
+  
+  <mobile_myFooter></mobile_myFooter>
 </div>
   
 </template>
 
 <script>
-import myfooter from "./myFooter"
+import mobile_myFooter from "./mobile_myFooter"
 export default {
-  components:{myfooter},
+  components:{mobile_myFooter},
   data () {
       return {
         dropdown_font: ['Arial', 'Calibri', 'Courier', 'Verdana'],
@@ -30,48 +53,26 @@ export default {
   methods: {
     toSignIn()
     {
-      this.$router.push('/signin');
+      this.$router.push('/M_signin');
     },
     toSignUp()
     {
-      if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
-) 
         this.$router.push('/M_signup');
-      
-      else
-        this.$router.push('/signup');
     }
+    
   }
   
 }
 </script>
 
 <style scoped>
-#logo 
-{
-  /* position: absolute; */
-  width: 1.52rem;
-  height: 65px;
-  left: 0.96rem;
-  top: 22px;
-}
 
-#triangle 
-{
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  left: 2.37px;
-  top: 88.62px;
-  opacity: 0.6;
-  transform: rotate(-42.37deg);
-}
 #classes
 {
   position: absolute;
-  width: 75px;
+  width: 0.75rem;
   height: 28px;
-  left: 633.5px;
+  left: 6.335rem;
   top: 40px;
   font-family: Montserrat;
   font-style: normal;
@@ -137,13 +138,14 @@ export default {
   flex-grow: 0;
   margin: 0px 36px;
 }
+
 #signIn
 {
-  position: absolute;
-  width: 1rem;
-  height: 36px;
+  /* position: absolute; */
+  /* width: 1rem;
+  height: 5%;
   left: 11.75rem;
-  top: 36px;
+  top: 36px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -153,10 +155,10 @@ export default {
   color: #2A84C6;
   background-color: #ffffff;
   /* Inside Auto Layout */
-  flex: none;
+  /* flex: none;
   order: 0;
   flex-grow: 0;
-  margin: 0px 0px;
+  margin: 0px 0px; */
 }
 
 #signUp
@@ -167,9 +169,9 @@ export default {
   align-items: center;
   padding: 8px 24px;
   position: absolute;
-  width: 10.7rem;
-  height: 36px;
-  left: 1258px;
+  width: 1rem;
+  height: 5%;
+  left: 16rem;
   top: 36px;
   color:#ffffff;
   /* Button/Primary/Active */
@@ -184,24 +186,7 @@ export default {
 
 #title
 {
-  /* position: absolute; */
-  /* width: 20%;
-  height: 10%; */
-  left: 7%;
-  top: 20%;
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 60px;
-  line-height: 72px;
-  /* or 120% */
   color:#1A1A5E;
-  letter-spacing: -0.005em;
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-  margin: 0px 10px;
 }
 
 #illustration
@@ -276,35 +261,5 @@ export default {
   
   box-sizing: border-box;
 }
-#intro
-{
-  position: absolute;
-  width: 0px;
-  height: 48px;
-  left: 156px;
-  top: 486px;
-  
-  /* Light/Gray/10 */
-  border: 2px solid #E5E5E5;
-  /* Inside Auto Layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 24px;
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  /* identical to box height, or 150% */
-  text-align: center;
-  letter-spacing: 0.0125em;
-  /* Light/Secondary/50 */
-  color: #2A84C6;
-  /* Inside Auto Layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 8px;
-}
+
 </style>
