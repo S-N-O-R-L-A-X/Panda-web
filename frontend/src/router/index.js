@@ -10,6 +10,7 @@ import Backup from '../components/backup.vue'
 import Test from '../mobile/test.vue'
 import M_signup from '../mobile/mobile_SignUp.vue'
 import M_signin from '../mobile/mobile_SignIn.vue'
+import M_home from '../mobile/mobile_Home.vue'
 
 Vue.use(VueRouter)
 
@@ -72,6 +73,11 @@ const routes = [
     path: '/m_signin',
     name: 'M_signin',
     component: M_signin
+  },
+  {
+    path: '/m_home',
+    name: 'M_home',
+    component: M_home
   },
 ]
 
