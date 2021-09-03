@@ -4,8 +4,8 @@
   
     <v-card-title id="title">Join us</v-card-title>
     <v-card-subtitle id="subtitle">Getting started from here</v-card-subtitle>
-    <v-card-content id="content" style="top:260px;">From signing up for an account to choosing an identity</v-card-content>
-    <v-card-content id="content" style="top:280px;">-Student/Teacher/Collaborator</v-card-content>
+    <v-card-text id="content" style="top:260px;">From signing up for an account to choosing an identity</v-card-text>
+    <v-card-text id="content" style="top:280px;">-Student/Teacher/Collaborator</v-card-text>
     
     <v-btn id="signUp" @click="toSignUp()">Sign Up Now</v-btn>
   

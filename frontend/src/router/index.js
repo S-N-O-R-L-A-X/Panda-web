@@ -11,6 +11,7 @@ import Test from '../mobile/test.vue'
 import M_signup from '../mobile/mobile_SignUp.vue'
 import M_signin from '../mobile/mobile_SignIn.vue'
 import M_home from '../mobile/mobile_Home.vue'
+import M_join from '../mobile/mobile_Join.vue'
 
 Vue.use(VueRouter)
 
@@ -78,6 +79,11 @@ const routes = [
     path: '/m_home',
     name: 'M_home',
     component: M_home
+  },
+  {
+    path: '/m_join',
+    name: 'M_join',
+    component: M_join
   },
 ]
 

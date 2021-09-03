@@ -1,19 +1,6 @@
 <template>
 <div>
-  <v-row>
-    <v-col cols="5">
-      <v-img src="../pics/LOGO.png" max-width="12rem"></v-img>
-    </v-col>
-    <v-col cols="3"><v-btn @click="toSignIn()" class="white blue--text">Sign In</v-btn></v-col>
-    <v-col cols="4"><v-btn @click="toSignUp()" class="indigo accent-4  white--text">Sign Up</v-btn></v-col>
-  </v-row>
-  <v-row>
-    <v-app-bar color="#F2F2F2" >
-      <v-col cols="4"><router-link to="/classes" >Classes</router-link></v-col>
-      <v-col cols="4"><router-link to="/download" >Download</router-link></v-col>
-      <v-col cols="4"><router-link to="/join">Join us</router-link></v-col>
-    </v-app-bar>
-  </v-row>
+  <mobile_myHeader/>
   
   <v-row>
     <v-col cols="12">
@@ -36,31 +23,22 @@
     </v-col>  
   </v-row>
   
-  <mobile_myFooter></mobile_myFooter>
+  <mobile_myFooter/>
 </div>
   
 </template>
 
 <script>
-import mobile_myFooter from "./mobile_myFooter"
+import mobile_myFooter from "../components/mobile_myFooter"
+import mobile_myHeader from "../components/mobile_myHeader"
 export default {
-  components:{mobile_myFooter},
+  components:{mobile_myFooter,mobile_myHeader},
   data () {
       return {
         dropdown_font: ['Arial', 'Calibri', 'Courier', 'Verdana'],
       }
     },
-  methods: {
-    toSignIn()
-    {
-      this.$router.push('/M_signin');
-    },
-    toSignUp()
-    {
-        this.$router.push('/M_signup');
-    }
-    
-  }
+  
   
 }
 </script>

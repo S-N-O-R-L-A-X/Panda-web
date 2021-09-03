@@ -52,7 +52,7 @@ export default {
       password: '',
       nameRules: [
         v => !!v || 'Password is required',
-        v => v.length <= 10 || 'Password must be less than 10 characters',
+        v => v.length >= 8  || 'Password must be more than 8 characters and less than 20 characters',
       ],
       email: '',
       emailRules: [

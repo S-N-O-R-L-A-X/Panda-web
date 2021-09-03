@@ -155,7 +155,7 @@ export default {
   width:44.6%;
   position: absolute;
   left:25%;
-  top:35%;
+  top:30%;
 }
 
 #signup
@@ -165,7 +165,7 @@ export default {
   position: absolute;
   background-color:#1443BD;
   color:#ffffff;
-  top:75%;
+  top:80%;
   left:35%;
 }
 
