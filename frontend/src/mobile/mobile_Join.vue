@@ -6,9 +6,8 @@
       <v-col cols="12"> -->
         <v-card-title id="title">Join us</v-card-title>
       <!-- </v-col> -->
-      <!-- <v-card-subtitle id="subtitle" class="">Getting started from here</v-card-subtitle> -->
       <v-card-text id="content" style="top:55%">From signing up for an account to choosing an identity</v-card-text>
-      <v-card-text id="content" style="top:60%;left:4rem">-Student/Teacher/Collaborator</v-card-text>
+      <v-card-text id="content" style="top:59%;left:4rem">-Student/Teacher/Collaborator</v-card-text>
       <!-- </v-row> -->
 
     
@@ -35,8 +34,8 @@ export default {
 
 #bg
 {
-  width:100%;
-  height:100%;
+  width:90%;
+  height:90%;
   left:1rem;
   top:20%;
 }
@@ -51,23 +50,11 @@ export default {
   line-height: 42px;
   font-size: 34px;
   position:absolute;
-  left:13rem;
+  left:10rem;
   top:40%;
 }
 
-#subtitle
-{
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  /* line-height: 24px; */
-  letter-spacing: 0.005em;
-  font-size: 16px;
-  color:#2B2796;
-  position:absolute;
-  left:8rem;
-  top:50%;
-}
+
 
 #content
 {
