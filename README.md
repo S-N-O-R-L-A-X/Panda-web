@@ -12,7 +12,7 @@ You can run the following command in powershell to check whether node.js has bee
     node -v
 ```
 
-1. In the `frontend` directory, run the following command to import the dependency for the server.
+2. In the `frontend` directory, run the following command to import the dependency for the server.
 
 ```shell
     npm install
@@ -23,3 +23,13 @@ You can run the following command in powershell to check whether node.js has bee
 ```shell
     npm run serve
 ```
+
+
+
+
+
+## Todo
+
+1. The content in classes.
+2. The apps in download.
+3. The size of footer on PC.

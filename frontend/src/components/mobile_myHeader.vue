@@ -8,7 +8,7 @@
     <v-col cols="4"><v-btn @click="toSignUp()" class="indigo accent-4  white--text">Sign Up</v-btn></v-col>
   </v-row>
   <v-row>
-    <v-app-bar color="#F2F2F2" >
+    <v-app-bar color="#F2F2F2" height="20%" >
       <v-col cols="4"><router-link to="/M_classes" >Classes</router-link></v-col>
       <v-col cols="4"><router-link to="/M_download" >Download</router-link></v-col>
       <v-col cols="4"><router-link to="/M_join">Join us</router-link></v-col>

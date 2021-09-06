@@ -40,15 +40,15 @@ export default {
 #class1
 {
     position: absolute; 
-    left: 129px;
-    top: 194px;    
+    left: 10%;
+    top: 10%;    
 }
 
 #class2
 {
     position: absolute; 
-    left: 841px;
-    top: 411px;    
+    right:10%;
+    top: 40%;    
 }
 
 

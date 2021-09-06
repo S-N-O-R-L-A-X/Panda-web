@@ -1,6 +1,5 @@
 <template>
 <div>
-
   <mobile_signinCard/>
 </div>
 </template>
