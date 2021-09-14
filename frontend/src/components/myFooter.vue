@@ -38,7 +38,7 @@
             </v-row>
       </v-card>
       
-      <v-card color="#F2F2F2" class="pink--text" min-height="80px" id="card2">
+      <v-card color="#F2F2F2" class="pink--text" min-height="60px" height="5%" id="card2">
             <v-row>
                   <v-col col="3">
                         <v-img src="../pics/LOGO.png" id="logo"></v-img>
@@ -108,7 +108,7 @@
 #card1
 {
       position: absolute;
-      bottom:80px;
+      bottom:5%;
       width:100%;
 }
 

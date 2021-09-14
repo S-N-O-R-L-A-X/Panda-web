@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .v-img
 {
     width: 160px;

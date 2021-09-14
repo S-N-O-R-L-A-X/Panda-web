@@ -263,7 +263,7 @@ export default {
   position: absolute;
   left: 0;
   top: 89.66px;
-  width:1280px;
+  width:100%;
   /* Dark/Error/90 */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #D93A56; */
 }
