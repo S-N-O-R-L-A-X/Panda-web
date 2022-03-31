@@ -40,6 +40,7 @@
 
 <script>
 import axios from 'axios'
+import {httpPost,httpGet} from '@/api/http.js'
 export default {
   data: () => ({
       snackbar:false,
@@ -60,15 +61,22 @@ export default {
     }),
     methods:
     {
-        login(){
-        let user = this.new_user,formdata=new FormData();
-        Object.keys(user).forEach((key) => {
-          formdata.append(key, user[key]);
-        });
+      login(){
+        const user={email:this.email, password:this.password};
+        
+        console.log(user);
+        httpGet('login',user).then(res => {
+          
+          alert("欢迎您！"+res)
+          
+        })
+        .catch(err => {
+          alert("登录失败!" + err.message);
+        })
+        /*
         axios.post('http://1.117.107.95:8000/login/',formdata)
           .then(response => {
             console.log(response);
-            console.log(response.status);
             if(response.status===200) {
               this.$emit('change', 'Created!');
               this.snackbar_text = "登录成功";
@@ -84,6 +92,7 @@ export default {
           .finally(e => {
             
           })
+          */
       }
     },
     computed: {
