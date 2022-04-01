@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import myfooter from '../components/myFooter'
+import myfooter from '../components/layout/myFooter'
 export default {
   components:{myfooter},
   methods:(

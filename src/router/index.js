@@ -6,7 +6,6 @@ import Download from '../views/Download.vue'
 import Join from '../views/Join.vue'
 import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
-import Backup from '../components/backup.vue'
 import Test from '../mobile/test.vue'
 import M_signup from '../mobile/mobile_SignUp.vue'
 import M_signin from '../mobile/mobile_SignIn.vue'
@@ -56,11 +55,6 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
-  },
-  {
-    path: '/backup',
-    name: 'Backup',
-    component: Backup
   },
   {
     path: '/test',
