@@ -1,27 +1,11 @@
 <template>
+<div>
   <v-card id="card">
     <v-img src="../pics/LOGO.png" id="logo"></v-img>
     <v-card-title id="v-card-title">welcome</v-card-title>
 
     <v-form id="form">
-      <v-row
-        ><v-text-field
-          v-model="email"
-          :rules="emailRules"
-          label="Emailaddress"
-          required
-          outlined
-        ></v-text-field
-      ></v-row>
-      <v-row>
-        <v-text-field
-          v-model="password"
-          :rules="passwordRules"
-          label="Password"
-          required
-          outlined
-        ></v-text-field>
-      </v-row>
+      
       <v-row>
         <v-text-field
           v-model="username"
@@ -33,6 +17,34 @@
         ></v-text-field>
       </v-row>
       <v-row>
+        <v-text-field
+          v-model="password"
+          :rules="passwordRules"
+          label="Password"
+          required
+          outlined
+        ></v-text-field>
+      </v-row>
+      <v-row>
+        <v-text-field
+          v-model="repeatedPassword"
+          :rules="repeatedPasswordRules"
+          label="RepeatedPassword"
+          required
+          outlined
+        ></v-text-field>
+      </v-row>
+
+      <v-row>
+        <v-text-field
+          v-model="email"
+          :rules="emailRules"
+          label="Emailaddress"
+          required
+          outlined
+        ></v-text-field>
+      </v-row>
+      <!-- <v-row>
         <v-select
           v-model="select"
           :items="identities"
@@ -40,8 +52,8 @@
           label="Identity"
           required
         ></v-select>
-      </v-row>
-      <v-card-title></v-card-title>
+      </v-row> -->
+      
     </v-form>
 
     <v-btn id="signup" @click="createUser()">Join Us →</v-btn>
@@ -50,11 +62,17 @@
       <router-link to="/signin">Sign in.</router-link>
     </v-row>
   </v-card>
+  <v-alert border="right" colored-border
+      dismissible type="error"  elevation="2" :value="wrongAlert">{{alertContent}}</v-alert>
+  <v-overlay :value="overlay">
+    请在下方输入验证码
+  </v-overlay>
+</div>
 </template>
 
 <script>
 import axios from "axios";
-import {httpPost} from "@/api/http.js"
+import {sendCode} from "@/api/register.js";
 export default {
   data() {
     return {
@@ -70,7 +88,13 @@ export default {
           v.length >= 8 ||
           "Password must be more than 8 characters and less than 20 characters",
       ],
-
+      repeatedPassword: "",
+      repeatedPasswordRules: [
+        (v) => !!v || "Repeated password is required for safety",
+        (v) =>
+          v.length >= 8 ||
+          "Password must be more than 8 characters and less than 20 characters",
+      ],
       email: "",
       emailRules: [
         (v) => !!v || "E-mail is required",
@@ -79,12 +103,19 @@ export default {
       checkbox: true,
       select: null,
       identities: ["Teacher", "Student"],
+      overlay:false,
+      wrongAlert:false,
+      alertContent:"",
     };
   },
   methods: {
     createUser() {
-      const user={email: this.email, password: this.password};
-      httpPost("/login",user)
+      if(this.repeatedPassword!==this.password) {
+        this.alertContent="两次输入密码不一致！"
+        return ;
+      }
+      const user={email: this.email, password: this.password,repeat_password: this.repeatedPassword,username: this.username};
+      sendCode("register1",user)
       .then((res) => {
         console.log(res)
         this.snackbar_text = "成功创建用户";
@@ -112,7 +143,7 @@ export default {
   /* width:74px; */
   height: 2.4%;
   position: absolute;
-  top: 17%;
+  top: 10%;
   left: 45%;
 
   font-size: 16px;
@@ -123,23 +154,23 @@ export default {
   height: 6%;
   position: absolute;
   left: 344px;
-  top: 101px;
+  top: 5%;
 }
 
 #form {
   width: 44.6%;
   position: absolute;
   left: 232px;
-  top: 281px;
+  top: 20%;
 }
 
 #signup {
   width: 375px;
   height: 50px;
-  position: absolute;
+  /* position: absolute; */
   background-color: #1443bd;
   color: #ffffff;
-  top: 620px;
+  top: 65%;
   left: 232px;
 }
 
@@ -148,7 +179,7 @@ export default {
   width: 247px;
   height: 20px;
   left: 350px;
-  top: 750px;
+  top: 80%;
 
   font-family: Montserrat;
   font-style: normal;
