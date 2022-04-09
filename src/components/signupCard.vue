@@ -1,5 +1,13 @@
 <template>
 <div>
+  <!-- <v-snackbar>
+    {{alertContent}}
+    <template>
+      <v-btn @click="wrongAlert=false"></v-btn>
+    </template>
+  </v-snackbar> -->
+  <v-alert border="right" colored-border class="alert"
+      dismissible type="error"  elevation="4" :value="wrongAlert">{{alertContent}}</v-alert>
   <v-card id="card">
     <v-img src="../pics/LOGO.png" id="logo"></v-img>
     <v-card-title id="v-card-title">welcome</v-card-title>
@@ -17,9 +25,13 @@
         ></v-text-field>
       </v-row>
       <v-row>
+        
         <v-text-field
-          v-model="password"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword = !showPassword"
+          :type="showPassword ? 'text' : 'password'"
           :rules="passwordRules"
+          hint="At least 8 characters"
           label="Password"
           required
           outlined
@@ -62,16 +74,23 @@
       <router-link to="/signin">Sign in.</router-link>
     </v-row>
   </v-card>
-  <v-alert border="right" colored-border
-      dismissible type="error"  elevation="2" :value="wrongAlert">{{alertContent}}</v-alert>
+  
   <v-overlay :value="overlay">
     请在下方输入验证码
+    <v-text-field
+      v-model="verifyCode"
+      label="Verify Code"
+      required
+      outlined
+    ></v-text-field>
+    <v-btn>确认
+    </v-btn>
   </v-overlay>
 </div>
 </template>
 
 <script>
-import axios from "axios";
+
 import {sendCode} from "@/api/register.js";
 export default {
   data() {
@@ -82,6 +101,7 @@ export default {
         (v) => v.length <= 10 || "Name must be less than 10 characters",
       ],
       password: "",
+      showPassword: "",
       passwordRules: [
         (v) => !!v || "Password is required",
         (v) =>
@@ -112,17 +132,18 @@ export default {
     createUser() {
       if(this.repeatedPassword!==this.password) {
         this.alertContent="两次输入密码不一致！"
+        this.wrongAlert=true;
         return ;
       }
       const user={email: this.email, password: this.password,repeat_password: this.repeatedPassword,username: this.username};
-      sendCode("register1",user)
+      sendCode("register1/",user)
       .then((res) => {
         console.log(res)
         this.snackbar_text = "成功创建用户";
         this.snackbar = true;
       })
       .catch((error) => {
-        alert("新建用户失败：" + error.message);
+        alert("新建用户失败：" + error);
       })
       
     },
@@ -131,6 +152,10 @@ export default {
 </script>
 
 <style>
+.alert {
+  top: 0;
+}
+
 #card {
   width: 50%;
   height: 100%;
