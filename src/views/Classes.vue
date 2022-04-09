@@ -3,21 +3,29 @@
   <p id="title2">Classes We Have</p>
   <p id="content2">introduction</p>
   <v-img src="../pics/classes/Card Image 1.png" id="class1"></v-img>
-  <p id="classH1">head1</p>
-  <p id="classC1">content1</p> 
-  <v-img src="../pics/classes/Card Image 2.png" id="class2"></v-img>
-  <p id="classH2">head2</p>
-  <p id="classC2">content2</p> 
-  <v-img src="../pics/classes/Card Image 3.png" id="class3"></v-img>
-  <p id="classH3">head1</p>
-  <p id="classC3">content1</p> 
+  <p id="classH1">一级课程</p>
+  <p id="classC1">{{text[0]}}</p> 
+  <v-img src="../pics/classes/Card Image 3.png" id="class2"></v-img>
+  <p id="classH2">二级课程</p>
+  <p id="classC2">{{text[1]}}</p> 
+  <v-img src="../pics/classes/Card Image 2.png" id="class3"></v-img>
+  <p id="classH3">三级课程</p>
+  <p id="classC3">{{text[2]}}</p> 
   
 </div>
 </template>
 
 <script>
 export default {
-
+  data(){
+    return {
+      text:[
+        "根据HSK1级词汇语法原创的汉语歌曲，帮助你理解并使用一些非常简单的汉语词语和句子，满足具体的交际需求，培养进一步学习汉语的能力。",
+        "根据HSK2级词汇语法原创的汉语歌曲，帮助你用汉语就熟悉的日常话题进行简单而直接的交流，达到初级汉语优等水平。",
+        "根据HSK2级词汇语法原创的汉语歌曲，帮助你用汉语就熟悉的日常话题进行简单而直接的交流，达到初级汉语优等水平。"
+      ]
+    }
+  }
 }
 </script>
 
