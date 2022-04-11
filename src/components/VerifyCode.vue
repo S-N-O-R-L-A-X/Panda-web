@@ -1,6 +1,6 @@
 <template>
   <v-overlay :value="showCode">
-
+    <ErrorAlert :wrong-alert="wrongAlert" :content="alertContent" />
     请在下方输入验证码
     <v-text-field
       v-model="verifyCode"
@@ -15,11 +15,15 @@
 
 <script>
 import { inputCode } from "@/api/register.js";
+import ErrorAlert from "./ErrorAlert.vue"
 export default {
+  components:{ErrorAlert},
   props: { showCode: { type: Boolean }, user: { type: Object } },
   data() {
     return {
       verifyCode: "",
+      alertContent: "",
+      wrongAlert:false,
     };
   },
   methods: {
@@ -37,7 +41,8 @@ export default {
           
         })
         .catch((err) => {
-          
+          this.wrongAlert=true;
+          this.alertContent=err;
         });
     },
     cancelVerify() {

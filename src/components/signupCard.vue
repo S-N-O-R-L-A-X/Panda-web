@@ -6,8 +6,7 @@
       <v-btn @click="wrongAlert=false"></v-btn>
     </template>
   </v-snackbar> -->
-  <v-alert border="right" colored-border class="alert"
-      dismissible type="error"  elevation="4" :value="wrongAlert">{{alertContent}}</v-alert>
+  <ErrorAlert :wrong-alert="wrongAlert" :content="alertContent" />
   <v-card id="card">
     <v-img src="../pics/LOGO.png" id="logo"></v-img>
     <v-card-title id="v-card-title">welcome</v-card-title>
@@ -83,10 +82,11 @@
 </template>
 
 <script>
+import ErrorAlert from "./ErrorAlert.vue"
 import VerifyCode from "./VerifyCode.vue"
 import {sendCode} from "@/api/register.js";
 export default {
-  components:{VerifyCode},
+  components:{ErrorAlert,VerifyCode},
   data() {
     return {
       username: "",
