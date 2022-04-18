@@ -16,4 +16,8 @@ export default {
 </script>
 
 <style>
+.v-alert {
+  top:0;
+  width:50%;
+}
 </style>

@@ -158,9 +158,6 @@ export default {
 </script>
 
 <style>
-.alert {
-  top: 0;
-}
 
 #card {
   width: 50%;
