@@ -84,7 +84,7 @@
 <script>
 import ErrorAlert from "./ErrorAlert.vue"
 import VerifyCode from "./VerifyCode.vue"
-import {sendCode} from "@/api/register.js";
+import axios from "axios";
 export default {
   components:{ErrorAlert,VerifyCode},
   data() {
@@ -138,13 +138,8 @@ export default {
         "repeat_password": this.repeatedPassword,
         "username": this.username
       };
-      let user =new FormData();
-      user.append("email",this.email);
-      user.append("password",this.password);
-      user.append("repeat_password",this.repeatedPassword);
-      user.append("username",this.username);
 
-      sendCode("register1/",user)
+      axios.post("http://panda.rainspace.cn:8001/register1/", this.user)
       .then((res) => {
         this.showCode=true;
       })
