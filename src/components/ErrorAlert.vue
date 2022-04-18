@@ -17,6 +17,7 @@ export default {
 
 <style>
 .v-alert {
+  position: absolute !important;
   top:0;
   width:50%;
 }

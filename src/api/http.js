@@ -16,9 +16,6 @@ export async function httpGet(url, params) {
   if (code === 0) {
     return data || true
   }
-  // 统一输出报错信息
-  
-  
 }
 
 
