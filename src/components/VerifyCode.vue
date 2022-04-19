@@ -37,6 +37,7 @@ export default {
       console.log(userInfo);
       inputCode("register2/", userInfo)
         .then((res) => {
+          this.alert("注册成功！");
           this.cancelVerify();
           
         })
