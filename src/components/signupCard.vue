@@ -1,5 +1,12 @@
 <template>
 <div>
+  <!-- <v-snackbar>
+    {{alertContent}}
+    <template>
+      <v-btn @click="wrongAlert=false"></v-btn>
+    </template>
+  </v-snackbar> -->
+  <ErrorAlert :wrong-alert="wrongAlert" :content="alertContent" />
   <v-card id="card">
     <v-img src="../pics/LOGO.png" id="logo"></v-img>
     <v-card-title id="v-card-title">welcome</v-card-title>
@@ -17,16 +24,23 @@
         ></v-text-field>
       </v-row>
       <v-row>
+        
         <v-text-field
-          v-model="password"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword = !showPassword"
+          :type="showPassword ? 'text' : 'password'"
           :rules="passwordRules"
+          v-model="password"
+          hint="At least 8 characters"
           label="Password"
           required
           outlined
         ></v-text-field>
       </v-row>
       <v-row>
+
         <v-text-field
+          type="password"
           v-model="repeatedPassword"
           :rules="repeatedPasswordRules"
           label="RepeatedPassword"
@@ -62,18 +76,17 @@
       <router-link to="/signin">Sign in.</router-link>
     </v-row>
   </v-card>
-  <v-alert border="right" colored-border
-      dismissible type="error"  elevation="2" :value="wrongAlert">{{alertContent}}</v-alert>
-  <v-overlay :value="overlay">
-    请在下方输入验证码
-  </v-overlay>
+  <VerifyCode :show-code="showCode" :user="user" @closeVerify="closeVerify()" />
+  
 </div>
 </template>
 
 <script>
+import ErrorAlert from "./ErrorAlert.vue"
+import VerifyCode from "./VerifyCode.vue"
 import axios from "axios";
-import {sendCode} from "@/api/register.js";
 export default {
+  components:{ErrorAlert,VerifyCode},
   data() {
     return {
       username: "",
@@ -82,6 +95,7 @@ export default {
         (v) => v.length <= 10 || "Name must be less than 10 characters",
       ],
       password: "",
+      showPassword: false,
       passwordRules: [
         (v) => !!v || "Password is required",
         (v) =>
@@ -106,31 +120,45 @@ export default {
       overlay:false,
       wrongAlert:false,
       alertContent:"",
+      showCode:false,
+      user:null,
     };
   },
   methods: {
     createUser() {
       if(this.repeatedPassword!==this.password) {
         this.alertContent="两次输入密码不一致！"
+        this.wrongAlert=true;
         return ;
       }
-      const user={email: this.email, password: this.password,repeat_password: this.repeatedPassword,username: this.username};
-      sendCode("register1",user)
+
+      this.user={
+        "email": this.email, 
+        "password": this.password,
+        "repeat_password": this.repeatedPassword,
+        "username": this.username
+      };
+
+      axios.post("http://panda.rainspace.cn:8001/register1/", this.user)
       .then((res) => {
-        console.log(res)
-        this.snackbar_text = "成功创建用户";
-        this.snackbar = true;
+        this.showCode=true;
       })
       .catch((error) => {
-        alert("新建用户失败：" + error.message);
-      })
-      
+        this.alertContent="注册失败！"+error;
+        this.wrongAlert=true;
+        return ;
+      })  
     },
+
+    closeVerify(){
+      this.showCode=false;
+    }
   },
 };
 </script>
 
 <style>
+
 #card {
   width: 50%;
   height: 100%;

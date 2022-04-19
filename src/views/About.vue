@@ -1,26 +1,37 @@
 <template>
-  
+  <v-overlay :value="overlay">
+    请在下方输入验证码
+    <v-text-field
+      v-model="verifyCode"
+      label="Verify Code"
+      required
+      outlined
+    ></v-text-field>
+    <v-btn>确认</v-btn>
+  </v-overlay>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      icons: [
-        'mdi-wechat',
-        'mdi-youtube',
-        'mdi-bilibili',
-        'mdi-instagram',
-        'mdi-facebook',
-      ],
-      titles:["Product","Classes","Company","Subscribe to Panda"],
-      row1:["Website","HSK","About","Subscribe to Panda"],
-      row2:["Mobile APP","Live Class","Students","newsletter with updates"],
-      row3:["","KTV","Teachers",""],
-      row4:["","","",""]
-    }),
-  }
+// import inputCode from "@/api/register.js";
+export default {
+  data() {
+    return {
+			verifyCode:"",
+		};
+  },
+	methods:{
+		register(){
+			inputCode("register2/",verifyCode)
+			.then(res => {
+
+			})
+			.catch(err => {
+				
+			})
+		}
+	}
+};
 </script>
 
-<style scoped>
-
+<style>
 </style>
