@@ -91,7 +91,7 @@
               ></path>
             </svg>
           </v-btn>
-          <v-btn  class="mx-4" icon>
+          <v-btn  class="mx-4" icon @click="toBilibili()">
             <svg
               t="1627722570179"
               class="icon"
@@ -118,7 +118,9 @@
 
 
 <script>
+import toBilibili from "@/api/jump.js"
 export default {
+  
   data: () => ({
     titles: ["Product", "Classes", "Company"],
     row1: ["Website", "HSK", "About"],
