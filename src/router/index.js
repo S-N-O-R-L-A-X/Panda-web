@@ -6,7 +6,7 @@ import Download from '../views/Download.vue'
 import Join from '../views/Join.vue'
 import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
-import Test from '../mobile/test.vue'
+// import Test from '../mobile/test.vue'
 import M_signup from '../mobile/mobile_SignUp.vue'
 import M_signin from '../mobile/mobile_SignIn.vue'
 import M_home from '../mobile/mobile_Home.vue'
@@ -20,6 +20,11 @@ const routerPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
   return routerPush.call(this, location).catch(error=> error)
 }
+
+window.addEventListener('hashchange',function(e) {
+  console.log(e.oldURL); 
+  console.log(e.newURL)
+},false);
 
 const routes = [
 
@@ -61,11 +66,11 @@ const routes = [
     name: 'SignUp',
     component: SignUp
   },
-  {
-    path: '/test',
-    name: 'Test',
-    component: Test
-  },
+  // {
+  //   path: '/test',
+  //   name: 'Test',
+  //   component: Test
+  // },
   {
     path: '/m_signup',
     name: 'M_signup',

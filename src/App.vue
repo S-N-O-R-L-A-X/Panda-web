@@ -7,36 +7,39 @@
       <router-link to="/join"></router-link>
       <router-link to="/test"></router-link>
     </div> -->
-    <router-view/>
+    <router-view />
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     //
   }),
-  mounted(){
-      if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
-) 
-        this.$router.replace('/M_home');
-      
-      else
-        this.$router.replace('/');
+  mounted() {
+    if (
+      navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+      )
+    ) {
+      this.$router.replace("/M_home");
+      localStorage.setItem("device", "mobile");
+    }
 
-      window.addEventListener('hashchange',()=>{
-          var currentPath = window.location.hash.slice(1); // 获取输入的路由
-          if(this.$router.path !== currentPath){
-              this.$router.push(currentPath); // 动态跳转
-          }
-      },false);
-
-  }
+    window.addEventListener(
+      "hashchange",
+      () => {
+        var currentPath = window.location.hash.slice(1); // 获取输入的路由
+        if (this.$router.path !== currentPath) {
+          this.$router.push(currentPath); // 动态跳转
+        }
+      },
+      false
+    );
+  },
 };
-  
 </script>
 
 <style>
@@ -44,7 +47,7 @@ export default {
 a {
   text-decoration: none;
 }
- 
+
 .router-link-active {
   text-decoration: none;
 }
