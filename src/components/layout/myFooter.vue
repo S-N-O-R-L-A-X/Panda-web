@@ -56,7 +56,7 @@
     >
       <v-row>
         <v-col col="3">
-          <v-img src="../../pics/LOGO.png" id="logo"></v-img>
+          <v-img src="../../pics/LOGO.png" class="logo"></v-img>
         </v-col>
         <v-divider vertical inset></v-divider>
 
@@ -173,7 +173,7 @@
               ></path>
             </svg>
           </v-btn>
-          <v-btn class="mx-4" icon>
+          <v-btn class="mx-4" icon @click="toBilibili()">
             <!-- bilibili -->
             <svg
               t="1627722570179"
@@ -213,13 +213,16 @@ export default {
     toSignUp() {
       this.$router.push("/signup");
     },
+    toBilibili() {
+      window.open("https://space.bilibili.com/503788869/?spm_id_from=333.999.0.0");
+    }
   },
 };
 </script>
 
 <style scoped>
-#logo {
-  position: absolute;
+.logo {
+  /* position: absolute; */
   top: 0px;
   width: 156px;
   height: 65px;
