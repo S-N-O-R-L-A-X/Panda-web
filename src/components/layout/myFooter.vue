@@ -201,7 +201,7 @@
 
 
 <script>
-import toBilibili from "@/api/jump.js"
+
 export default {
   data: () => ({
     titles: ["Product", "Classes", "Company", "Subscribe to Panda"],
