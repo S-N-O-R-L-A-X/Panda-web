@@ -83,7 +83,7 @@ export default {
       const user = { email: this.email, password: this.password };
 
       console.log(user);
-      httpGet("login", user)
+      httpGet("auth/login", user)
         .then((res) => {
           this.snackbar=true;
           this.snackbar_text="登录成功！"
