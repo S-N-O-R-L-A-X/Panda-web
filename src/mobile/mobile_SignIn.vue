@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import mobile_signinCard from "../components/mobile_signinCard"
+  import mobile_signinCard from "./components/mobile_signinCard"
 export default {
   components:{mobile_signinCard},
   data: () => ({

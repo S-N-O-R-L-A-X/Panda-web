@@ -66,40 +66,41 @@ const routes = [
     name: 'SignUp',
     component: SignUp
   },
-  // {
-  //   path: '/test',
-  //   name: 'Test',
-  //   component: Test
-  // },
+  {
+    path: '/m_home',
+    name: 'M_home',
+    component: M_home,
+    meta:{device:'mobile'},
+  },
   {
     path: '/m_signup',
     name: 'M_signup',
-    component: M_signup
+    component: M_signup,
+    meta:{device:'mobile'},
   },
   {
     path: '/m_signin',
     name: 'M_signin',
-    component: M_signin
-  },
-  {
-    path: '/m_home',
-    name: 'M_home',
-    component: M_home
+    component: M_signin,
+    meta:{device:'mobile'},
   },
   {
     path: '/m_join',
     name: 'M_join',
-    component: M_join
+    component: M_join,
+    meta:{device:'mobile'},
   },
   {
     path: '/m_download',
     name: 'M_download',
-    component: M_download
+    component: M_download,
+    meta:{device:'mobile'},
   },
   {
     path: '/m_classes',
     name: 'M_classes',
-    component: M_classes
+    component: M_classes,
+    meta:{device:'mobile'},
   },
 ]
 

@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col cols="5">
-        <v-img src="../pics/LOGO.png" max-width="12rem"></v-img>
+        <v-img src="@/pics/LOGO.png" max-width="12rem"></v-img>
       </v-col>
       <v-col cols="3"
         ><v-btn @click="toSignIn()" class="white blue--text"

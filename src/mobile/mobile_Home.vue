@@ -1,6 +1,6 @@
 <template>
 <div>
-  <mobile_myHeader/>
+  <mobile_Layout/>
   
   <v-row>
     <v-col cols="12">
@@ -23,16 +23,15 @@
     </v-col>  
   </v-row>
   
-  <mobile_myFooter/>
+  
 </div>
   
 </template>
 
 <script>
-import mobile_myFooter from "../components/mobile_myFooter"
-import mobile_myHeader from "../components/mobile_myHeader"
+import mobile_Layout from "./mobile_Layout.vue";
 export default {
-  components:{mobile_myFooter,mobile_myHeader},
+  components: {mobile_Layout},
   data () {
       return {
         dropdown_font: ['Arial', 'Calibri', 'Courier', 'Verdana'],
@@ -238,6 +237,10 @@ export default {
   color:#2A84C6;
   
   box-sizing: border-box;
+}
+
+.col-12 {
+  padding:2rem 0.8rem 2rem 0.8rem;
 }
 
 </style>

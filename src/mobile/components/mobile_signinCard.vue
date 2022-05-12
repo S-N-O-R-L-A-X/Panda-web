@@ -14,7 +14,7 @@
       </template>
   </v-snackbar>
   <v-card elevation="5" id="card">
-      <v-img src="../pics/LOGO.png" id="logo"></v-img>
+      <v-img src="@/pics/LOGO.png" id="logo"></v-img>
       <v-card-title></v-card-title>
       
       <v-btn id="wechat"><v-icon>mdi-wechat </v-icon>Sign in with WeChat</v-btn>
