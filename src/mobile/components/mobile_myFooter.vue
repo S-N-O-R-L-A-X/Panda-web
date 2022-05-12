@@ -91,7 +91,7 @@
               ></path>
             </svg>
           </v-btn>
-          <v-btn  class="mx-4" icon>
+          <v-btn  class="mx-4" icon @click="toBilibili()">
             <svg
               t="1627722570179"
               class="icon"
@@ -118,7 +118,9 @@
 
 
 <script>
+
 export default {
+  
   data: () => ({
     titles: ["Product", "Classes", "Company"],
     row1: ["Website", "HSK", "About"],
@@ -129,6 +131,9 @@ export default {
   methods: {
     toSignUp() {
       this.$router.push("/M_signup");
+    },
+    toBilibili() {
+      window.location.href="https://space.bilibili.com/503788869/?spm_id_from=333.999.0.0";
     },
   },
 };

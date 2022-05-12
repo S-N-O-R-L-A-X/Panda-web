@@ -201,6 +201,7 @@
 
 
 <script>
+
 export default {
   data: () => ({
     titles: ["Product", "Classes", "Company", "Subscribe to Panda"],

@@ -1,6 +1,6 @@
 <template>
 <div>
-  <mobile_myHeader/>
+  <mobile_Layout/>
   <v-img src="../pics/join us/Frame 4608.png" id="bg"></v-img>
       <!-- <v-row>
       <v-col cols="12"> -->
@@ -12,16 +12,16 @@
 
     
 
-  <mobile_myFooter></mobile_myFooter>
+  
 </div>
 </template>
 
 <script>
-import mobile_myFooter from "../components/mobile_myFooter"
-import mobile_myHeader from "../components/mobile_myHeader"
-
+// import mobile_myFooter from "../components/mobile_myFooter"
+// import mobile_myHeader from "../components/mobile_myHeader"
+import mobile_Layout from "./mobile_Layout.vue"
 export default {
-  components:{mobile_myFooter,mobile_myHeader},
+  components:{mobile_Layout},
   methods:(
     {
          

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import mobile_myHeader from "../components/mobile_myHeader"
+import mobile_myHeader from "./components/mobile_myHeader"
 
 export default {
   components:{mobile_myHeader}

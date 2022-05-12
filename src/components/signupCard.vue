@@ -139,7 +139,7 @@ export default {
         "username": this.username
       };
 
-      axios.post("http://panda.rainspace.cn:8001/register1/", this.user)
+      axios.post("http://panda.rainspace.cn:8001/auth/verify", this.user)
       .then((res) => {
         this.showCode=true;
       })
