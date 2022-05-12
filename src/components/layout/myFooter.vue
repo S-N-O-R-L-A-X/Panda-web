@@ -87,7 +87,7 @@
         </v-col>
         <v-spacer></v-spacer>
         <v-col col="5">
-          <v-btn class="mx-4" icon>
+          <v-btn class="mx-4" icon @click="toWechat()">
             <!-- wechat -->
             <svg
               t="1649168087731"
@@ -216,6 +216,9 @@ export default {
     },
     toBilibili() {
       window.open("https://space.bilibili.com/503788869/?spm_id_from=333.999.0.0");
+    },
+    toWechat(){
+      window.open("https://mp.weixin.qq.com/s/YO5HbdmNTV5djuhDTgEYQA");
     }
   },
 };
