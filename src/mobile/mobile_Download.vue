@@ -5,7 +5,7 @@
   <p id="illustration">We already support in multiple platform to provide the best experiences</p>
 
   <v-btn id="ios"><v-icon>mdi-apple</v-icon>ios</v-btn>
-  <v-btn id="android"><v-icon>mdi-android</v-icon>Android</v-btn>
+  <v-btn id="android"  @click="androidDownload()"><v-icon>mdi-android</v-icon>Android</v-btn>
   <v-img src="../pics/downloads/Mockup.png" id="mockup"></v-img>
   
 </div>
@@ -15,7 +15,12 @@
 import mobile_myHeader from "./components/mobile_myHeader"
 
 export default {
-  components:{mobile_myHeader}
+  components:{mobile_myHeader},
+  methods:{
+    androidDownload(){
+      window.open("https://apks-1306415420.cos.ap-nanjing.myqcloud.com/app-debug.apk");
+    }
+  }
 }
 </script>
 
