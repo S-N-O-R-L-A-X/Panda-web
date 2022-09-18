@@ -1,6 +1,6 @@
 <template>
   <div>
-    <myHeader/>
+    <myHeader />
     <div class="mainBox">
       <p id="title">Learning Chinese with Panda!</p>
       <p id="illustration">
@@ -15,28 +15,25 @@
       ><span id="intro">Intro</span>
     </div>
     <div>
-      <myFooter/>
+      <myFooter />
     </div>
   </div>
 </template>
 
 <script>
 import myFooter from "./layout/myFooter.vue";
-import myHeader from "./layout/myHeader.vue"
+import myHeader from "./layout/myHeader.vue";
 export default {
-  components: { myFooter,myHeader },
+  components: { myFooter, myHeader },
   data() {
     return {
       dropdown_font: ["Arial", "Calibri", "Courier", "Verdana"],
     };
   },
-  
 };
 </script>
 
 <style>
-
-
 .similarButton {
   position: absolute;
   width: 75px;
@@ -56,6 +53,7 @@ export default {
   flex-grow: 0;
   margin: 0px 36px;
 }
+
 #triangle {
   position: absolute;
   width: 130px;
@@ -65,8 +63,6 @@ export default {
   opacity: 0.6;
   transform: rotate(-42.37deg);
 }
-
-
 
 #title {
   /* position: absolute; 
@@ -114,6 +110,7 @@ export default {
   flex-grow: 1;
   margin: 0px 10px;
 }
+
 #banner {
   position: absolute;
   width: 496px;
@@ -121,24 +118,27 @@ export default {
   right: 108px;
   top: 182px;
 }
+
 #vector3 {
   position: absolute;
   left: 0;
   /* top: 89.66px; */
   width: 100%;
-  bottom:20%;
+  bottom: 23%;
   /* Dark/Error/90 */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #D93A56; */
 }
+
 #vector4 {
   position: absolute;
   width: 855px;
   left: 5px;
-  bottom:20%;
+  bottom: 23%;
   /* Light/Error/5 */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), #F56D7E; */
   opacity: 0.4;
 }
+
 #getStart {
   /* Auto Layout */
   display: flex;
@@ -172,6 +172,7 @@ export default {
   letter-spacing: 0.0015em;
   color: #ffffff;
 }
+
 #arrowRight {
   position: absolute;
   left: 108px;
@@ -183,6 +184,7 @@ export default {
 
   box-sizing: border-box;
 }
+
 #intro {
   position: absolute;
   width: 0px;

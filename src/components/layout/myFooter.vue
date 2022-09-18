@@ -51,7 +51,7 @@
       color="#F2F2F2"
       class="pink--text"
       min-height="60px"
-      height="5%"
+      height="8%"
       id="card2"
     >
       <v-row>
@@ -60,30 +60,32 @@
         </v-col>
         <v-divider vertical inset></v-divider>
 
-        <v-col col="4">
-          Copyright
-          <svg
-            t="1649173105209"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="6063"
-            width="20px"
-            height="20px"
-          >
-            <path
-              d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
-              p-id="6064"
-              fill="#F56D7E"
-            ></path>
-            <path
-              d="M517.6 351.3c53 0 89 33.8 93 83.4 0.3 4.2 3.8 7.4 8 7.4h56.7c2.6 0 4.7-2.1 4.7-4.7 0-86.7-68.4-147.4-162.7-147.4C407.4 290 344 364.2 344 486.8v52.3C344 660.8 407.4 734 517.3 734c94 0 162.7-58.8 162.7-141.4 0-2.6-2.1-4.7-4.7-4.7h-56.8c-4.2 0-7.6 3.2-8 7.3-4.2 46.1-40.1 77.8-93 77.8-65.3 0-102.1-47.9-102.1-133.6v-52.6c0.1-87 37-135.5 102.2-135.5z"
-              p-id="6065"
-              fill="#F56D7E"
-            ></path>
-          </svg>
-          2021 Panda Singing Chinese,Inc.
+        <v-col col="4" style="vertical-align: center">
+          <span style="padding-top: 10px; padding-bottom: 10px">
+            Copyright
+            <svg
+              t="1649173105209"
+              class="icon"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="6063"
+              width="20px"
+              height="20px"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                p-id="6064"
+                fill="#F56D7E"
+              ></path>
+              <path
+                d="M517.6 351.3c53 0 89 33.8 93 83.4 0.3 4.2 3.8 7.4 8 7.4h56.7c2.6 0 4.7-2.1 4.7-4.7 0-86.7-68.4-147.4-162.7-147.4C407.4 290 344 364.2 344 486.8v52.3C344 660.8 407.4 734 517.3 734c94 0 162.7-58.8 162.7-141.4 0-2.6-2.1-4.7-4.7-4.7h-56.8c-4.2 0-7.6 3.2-8 7.3-4.2 46.1-40.1 77.8-93 77.8-65.3 0-102.1-47.9-102.1-133.6v-52.6c0.1-87 37-135.5 102.2-135.5z"
+                p-id="6065"
+                fill="#F56D7E"
+              ></path>
+            </svg>
+            2021 Panda Singing Chinese,Inc.
+          </span>
         </v-col>
         <v-spacer></v-spacer>
         <v-col col="5">
@@ -201,7 +203,6 @@
 
 
 <script>
-
 export default {
   data: () => ({
     titles: ["Product", "Classes", "Company", "Subscribe to Panda"],
@@ -215,21 +216,28 @@ export default {
       this.$router.push("/signup");
     },
     toBilibili() {
-      window.open("https://space.bilibili.com/503788869/?spm_id_from=333.999.0.0");
+      window.open(
+        "https://space.bilibili.com/503788869/?spm_id_from=333.999.0.0"
+      );
     },
-    toWechat(){
+    toWechat() {
       window.open("https://mp.weixin.qq.com/s/YO5HbdmNTV5djuhDTgEYQA");
-    }
+    },
   },
 };
 </script>
 
 <style scoped>
+body {
+  margin: 0;
+}
+
 .logo {
-  /* position: absolute; */
+  display: block;
   top: 0px;
   width: 156px;
   height: 65px;
+  margin: auto;
 }
 
 #but {
@@ -239,13 +247,13 @@ export default {
 
 #card1 {
   position: absolute;
-  bottom: 5%;
+  bottom: 8%;
   width: 100%;
 }
 
 #card2 {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
 }
 </style>
